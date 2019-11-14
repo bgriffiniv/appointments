@@ -11,6 +11,7 @@ description = """
 Appointments REST API for Nielsen Sports Car Service Center
 ------------------------------------------
 Project version: ${version}
+Gradle version: ${gradle.gradleVersion}
 ------------------------------------------
 """
 

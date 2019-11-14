@@ -29,22 +29,29 @@ interviewer.
 
 ### Design
 
+#### Structure
 There are four main components for the scheduler:
 - database and ORM/DAO (business objects)
 - service layer (business logic)
 - REST API
 - security layer
 
+#### Framework & Tools
 Spring Boot provides us with in-memory database options for building a prototype as well as 
 a REST framework including annotations. The only thing left to build is the actual database 
 and the business logic/objects.
 
+#### API
 The REST API should support the following functions:
 - POST /appointments { ... } (create)
 - GET /appointments/1 (read)
 - PUT /appointments/1 (update)
 - DELETE /appointments/1 (delete)
 - GET /appointments (list)
+
+#### Schema
+
+
 
 ### Considerations
 

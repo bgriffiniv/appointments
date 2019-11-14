@@ -1,5 +1,6 @@
 package com.bgriffiniv.challenges.nielsensports.appointments.model;
 
+import com.bgriffiniv.challenges.nielsensports.appointments.model.info.AvailabilityInfo;
 import com.bgriffiniv.challenges.nielsensports.appointments.model.info.ContactInfo;
 import com.bgriffiniv.challenges.nielsensports.appointments.model.info.ServiceInfo;
 import com.bgriffiniv.challenges.nielsensports.appointments.model.info.VehicleInfo;
@@ -13,6 +14,7 @@ public class Appointment {
 	private ContactInfo contactInfo;
 	private VehicleInfo vehicleInfo;
 	private ServiceInfo serviceInfo;
+	private AvailabilityInfo availabilityInfo;
 	private String notes;
 
 }
