@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d0644b4-4f54-4dd0-854f-15142b3e6622" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/info/AvailabilityInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/Appointment.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -166,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573690937598</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add AvailabilityInfo class&#10;&#10;- store date and time in a single Date object&#10;- TODO: use millisecond representation&#10;- TODO: offer converters in case strings are given&#10;- TODO: persist data in as close to JSON as possible">
+      <created>1573691870147</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1573691870147</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -182,6 +186,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update .gitignore to include Spring Boot defaults" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update .gitignore to include Spring Boot defaults" />
+    <MESSAGE value="Add AvailabilityInfo class&#10;&#10;- store date and time in a single Date object&#10;- TODO: use millisecond representation&#10;- TODO: offer converters in case strings are given&#10;- TODO: persist data in as close to JSON as possible" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add AvailabilityInfo class&#10;&#10;- store date and time in a single Date object&#10;- TODO: use millisecond representation&#10;- TODO: offer converters in case strings are given&#10;- TODO: persist data in as close to JSON as possible" />
   </component>
 </project>

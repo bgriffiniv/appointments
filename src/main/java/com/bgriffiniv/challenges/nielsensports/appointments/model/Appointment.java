@@ -17,4 +17,5 @@ public class Appointment {
 	private AvailabilityInfo availabilityInfo;
 	private String notes;
 
+
 }
