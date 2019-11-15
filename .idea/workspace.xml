@@ -1,22 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7d0644b4-4f54-4dd0-854f-15142b3e6622" name="Default Changelist" comment="">
+    <list default="true" id="7d0644b4-4f54-4dd0-854f-15142b3e6622" name="Default Changelist" comment="Add unit tests">
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/Appointment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/AppointmentScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/AppointmentScheduler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/IAppointmentScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/IAppointmentScheduler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/info/AvailabilityInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/info/AvailabilityInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/info/ContactInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/info/ContactInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/info/ServiceInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/info/ServiceInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/info/VehicleInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/info/VehicleInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/bgriffiniv/challenges/nielsensports/appointments/model/AppointmentSchedulerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/bgriffiniv/challenges/nielsensports/appointments/model/AppointmentSchedulerTest.java" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/.gradle/" />
-    <ignored path="$PROJECT_DIR$/build/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,28 +53,6 @@
       </state>
     </system>
   </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/bgriffiniv/challenges/nielsensports/appointments/model/AppointmentSchedulerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="141" column="42" selection-start-line="141" selection-start-column="38" selection-end-line="141" selection-end-column="42" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/AppointmentScheduler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="58" column="9" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -95,20 +63,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/Appointment.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/IAppointmentScheduler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/info/VehicleInfo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/info/ServiceInfo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/info/ContactInfo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/info/AvailabilityInfo.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/bgriffiniv/challenges/nielsensports/appointments/model/AppointmentSchedulerTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/AppointmentScheduler.java" />
-      </list>
-    </option>
-  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -116,109 +70,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="165" />
-    <option name="y" value="7" />
-    <option name="width" value="1163" />
-    <option name="height" value="728" />
-  </component>
   <component name="ProjectId" id="1TZysPsStuIkIG8vxo2puj3xuuG" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <flattenPackages ProjectPane="false" />
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="appointments" type="b2602c69:ProjectViewProjectNode" />
-              <item name="appointments" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="appointments" type="b2602c69:ProjectViewProjectNode" />
-              <item name="appointments" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="appointments" type="b2602c69:ProjectViewProjectNode" />
-              <item name="appointments" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="appointments" type="b2602c69:ProjectViewProjectNode" />
-              <item name="appointments" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="appointments" type="b2602c69:ProjectViewProjectNode" />
-              <item name="appointments" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="appointments" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="appointments" type="b2602c69:ProjectViewProjectNode" />
-              <item name="appointments" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="appointments" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="appointments" type="b2602c69:ProjectViewProjectNode" />
-              <item name="appointments" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="appointments" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="info" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="appointments" type="b2602c69:ProjectViewProjectNode" />
-              <item name="appointments" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="appointments" type="b2602c69:ProjectViewProjectNode" />
-              <item name="appointments" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="appointments" type="b2602c69:ProjectViewProjectNode" />
-              <item name="appointments" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="appointments" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="appointments" type="b2602c69:ProjectViewProjectNode" />
-              <item name="appointments" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="appointments" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-    </panes>
-  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/build.gradle" />
@@ -406,67 +258,15 @@
       <option name="project" value="LOCAL" />
       <updated>1573691870147</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Add unit tests">
+      <created>1573837482636</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1573837482636</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
-  </component>
-  <component name="TestHistory">
-    <history-entry file="AppointmentSchedulerTest - 2019.11.15 at 11h 43m 33s.xml">
-      <configuration name="AppointmentSchedulerTest" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="AppointmentSchedulerTest - 2019.11.15 at 11h 50m 47s.xml">
-      <configuration name="AppointmentSchedulerTest" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="AppointmentSchedulerTest - 2019.11.15 at 11h 50m 46s.xml">
-      <configuration name="AppointmentSchedulerTest" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="AppointmentSchedulerTest_removeAppointment_notFund_sizeShouldBeOne - 2019.11.15 at 11h 51m 59s.xml">
-      <configuration name="AppointmentSchedulerTest.removeAppointment_notFund_sizeShouldBeOne" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="AppointmentSchedulerTest - 2019.11.15 at 11h 52m 44s.xml">
-      <configuration name="AppointmentSchedulerTest" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="AppointmentSchedulerTest_removeAppointment_found_sizeShouldBeZero - 2019.11.15 at 11h 52m 52s.xml">
-      <configuration name="AppointmentSchedulerTest.removeAppointment_found_sizeShouldBeZero" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="AppointmentSchedulerTest - 2019.11.15 at 11h 55m 21s.xml">
-      <configuration name="AppointmentSchedulerTest" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="AppointmentSchedulerTest - 2019.11.15 at 11h 57m 04s.xml">
-      <configuration name="AppointmentSchedulerTest" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="AppointmentSchedulerTest - 2019.11.15 at 12h 00m 00s.xml">
-      <configuration name="AppointmentSchedulerTest" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="AppointmentSchedulerTest - 2019.11.15 at 12h 01m 13s.xml">
-      <configuration name="AppointmentSchedulerTest" configurationId="GradleRunConfiguration" />
-    </history-entry>
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3540091" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3927987" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39934534" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Build" order="10" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" />
-      <window_info anchor="right" id="Gradle" order="4" />
-      <window_info anchor="right" id="Palette&#9;" order="5" />
-    </layout>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -474,12 +274,7 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
+              <option name="COLUMN_ORDER" />
             </State>
           </value>
         </entry>
@@ -503,153 +298,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update .gitignore to include Spring Boot defaults" />
     <MESSAGE value="Add AvailabilityInfo class&#10;&#10;- store date and time in a single Date object&#10;- TODO: use millisecond representation&#10;- TODO: offer converters in case strings are given&#10;- TODO: persist data in as close to JSON as possible" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add AvailabilityInfo class&#10;&#10;- store date and time in a single Date object&#10;- TODO: use millisecond representation&#10;- TODO: offer converters in case strings are given&#10;- TODO: persist data in as close to JSON as possible" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/info/ServiceInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#597#598#0" expanded="true" />
-            <element signature="e#641#642#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/info/ContactInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-119">
-          <caret line="98" column="37" selection-start-line="98" selection-start-column="37" selection-end-line="98" selection-end-column="37" />
-          <folding>
-            <element signature="e#377#378#0" expanded="true" />
-            <element signature="e#400#401#0" expanded="true" />
-            <element signature="e#447#448#0" expanded="true" />
-            <element signature="e#480#481#0" expanded="true" />
-            <element signature="e#512#513#0" expanded="true" />
-            <element signature="e#534#535#0" expanded="true" />
-            <element signature="e#579#580#0" expanded="true" />
-            <element signature="e#610#611#0" expanded="true" />
-            <element signature="e#639#640#0" expanded="true" />
-            <element signature="e#658#659#0" expanded="true" />
-            <element signature="e#697#698#0" expanded="true" />
-            <element signature="e#722#723#0" expanded="true" />
-            <element signature="e#751#752#0" expanded="true" />
-            <element signature="e#770#771#0" expanded="true" />
-            <element signature="e#809#810#0" expanded="true" />
-            <element signature="e#834#835#0" expanded="true" />
-            <element signature="e#866#867#0" expanded="true" />
-            <element signature="e#888#889#0" expanded="true" />
-            <element signature="e#933#934#0" expanded="true" />
-            <element signature="e#964#965#0" expanded="true" />
-            <element signature="e#996#997#0" expanded="true" />
-            <element signature="e#1018#1019#0" expanded="true" />
-            <element signature="e#1063#1064#0" expanded="true" />
-            <element signature="e#1094#1095#0" expanded="true" />
-            <element signature="e#1122#1123#0" expanded="true" />
-            <element signature="e#1140#1141#0" expanded="true" />
-            <element signature="e#1177#1178#0" expanded="true" />
-            <element signature="e#1200#1201#0" expanded="true" />
-            <element signature="e#1229#1230#0" expanded="true" />
-            <element signature="e#1248#1249#0" expanded="true" />
-            <element signature="e#1287#1288#0" expanded="true" />
-            <element signature="e#1312#1313#0" expanded="true" />
-            <element signature="e#1339#1340#0" expanded="true" />
-            <element signature="e#1356#1357#0" expanded="true" />
-            <element signature="e#1391#1392#0" expanded="true" />
-            <element signature="e#1412#1413#0" expanded="true" />
-            <element signature="e#1445#1446#0" expanded="true" />
-            <element signature="e#1468#1469#0" expanded="true" />
-            <element signature="e#1515#1516#0" expanded="true" />
-            <element signature="e#1548#1549#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/IAppointmentScheduler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="20" selection-start-line="9" selection-start-column="20" selection-end-line="9" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/info/AvailabilityInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="30" column="42" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
-          <folding>
-            <element signature="e#203#204#0" expanded="true" />
-            <element signature="e#230#231#0" expanded="true" />
-            <element signature="e#285#286#0" expanded="true" />
-            <element signature="e#326#327#0" expanded="true" />
-            <element signature="e#363#364#0" expanded="true" />
-            <element signature="e#390#391#0" expanded="true" />
-            <element signature="e#445#446#0" expanded="true" />
-            <element signature="e#486#487#0" expanded="true" />
-            <element signature="e#860#861#0" expanded="true" />
-            <element signature="e#926#927#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/info/VehicleInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="44" column="37" selection-start-line="44" selection-start-column="37" selection-end-line="44" selection-end-column="37" />
-          <folding>
-            <element signature="e#1042#1043#0" expanded="true" />
-            <element signature="e#1116#1117#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/Appointment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
-          <caret line="73" column="30" selection-start-line="73" selection-start-column="16" selection-end-line="73" selection-end-column="30" />
-          <folding>
-            <element signature="e#724#725#0" expanded="true" />
-            <element signature="e#751#752#0" expanded="true" />
-            <element signature="e#806#807#0" expanded="true" />
-            <element signature="e#847#848#0" expanded="true" />
-            <element signature="e#887#888#0" expanded="true" />
-            <element signature="e#912#913#0" expanded="true" />
-            <element signature="e#968#969#0" expanded="true" />
-            <element signature="e#1005#1006#0" expanded="true" />
-            <element signature="e#1045#1046#0" expanded="true" />
-            <element signature="e#1070#1071#0" expanded="true" />
-            <element signature="e#1126#1127#0" expanded="true" />
-            <element signature="e#1163#1164#0" expanded="true" />
-            <element signature="e#1203#1204#0" expanded="true" />
-            <element signature="e#1228#1229#0" expanded="true" />
-            <element signature="e#1284#1285#0" expanded="true" />
-            <element signature="e#1321#1322#0" expanded="true" />
-            <element signature="e#1371#1372#0" expanded="true" />
-            <element signature="e#1401#1402#0" expanded="true" />
-            <element signature="e#1472#1473#0" expanded="true" />
-            <element signature="e#1519#1520#0" expanded="true" />
-            <element signature="e#1548#1549#0" expanded="true" />
-            <element signature="e#1567#1568#0" expanded="true" />
-            <element signature="e#1606#1607#0" expanded="true" />
-            <element signature="e#1631#1632#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/bgriffiniv/challenges/nielsensports/appointments/model/AppointmentSchedulerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="141" column="42" selection-start-line="141" selection-start-column="38" selection-end-line="141" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/AppointmentScheduler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="58" column="9" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
+    <MESSAGE value="Add unit tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add unit tests" />
   </component>
 </project>
