@@ -5,8 +5,9 @@ import java.util.List;
 public interface IAppointmentScheduler {
 
 	public void addAppointment(Appointment appointment);
-	public Appointment findAppointment(int appointmentId);
+	public Appointment findAppointment(String appointmentId);
 	public List<Appointment> listAppointments();
-	public void editAppointment(int appointmentId, Appointment appointment) throws Exception;
-	public void removeAppointment(int appointmentId);
+	public int countAppointments();
+	public void editAppointment(String appointmentId, Appointment appointment);
+	public void removeAppointment(String appointmentId);
 }

@@ -1,23 +1,32 @@
 package com.bgriffiniv.challenges.nielsensports.appointments.model;
 
-import com.sun.javafx.binding.StringFormatter;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class AppointmentScheduler implements IAppointmentScheduler {
 
-	private Map<Integer, Appointment> appointmentRepo = new HashMap<>();
+	private final static Map<String, Appointment> appointmentRepo = new HashMap<>();
 
 	@Override
 	public void addAppointment(Appointment appointment) {
 		// persist
-		appointmentRepo.put(appointment.getAppointmentId(), appointment);
+		if (!isValidAppointment(appointment)) {
+			//throw new Exception(String.format("Failed to add invalid Appointment"));
+			return;
+		}
+		String newAppointmentId = "" + appointmentRepo.entrySet().size();
+		appointment.setAppointmentId(newAppointmentId);
+		appointmentRepo.put(newAppointmentId, appointment);
+	}
+
+	private boolean isValidAppointment(Appointment appointment) {
+		if (appointment == null) {
+			return false;
+		}
+		return true;
 	}
 
 	@Override
-	public Appointment findAppointment(int appointmentId) {
+	public Appointment findAppointment(String appointmentId) {
 		// get from db
 		if (!appointmentRepo.containsKey(appointmentId)) {
 			return null;
@@ -29,29 +38,44 @@ public class AppointmentScheduler implements IAppointmentScheduler {
 	@Override
 	public List<Appointment> listAppointments() {
 		// get from db
-		return null;
+		return new ArrayList<>(appointmentRepo.values());
 	}
 
 	@Override
-	public void editAppointment(int appointmentId, Appointment appointment) throws Exception {
+	public int countAppointments() {
+		// get from db
+		return listAppointments().size();
+	}
+
+	@Override
+	public void editAppointment(String appointmentId, Appointment appointment) {
 		if (findAppointment(appointmentId) == null) {
-			throw new Exception(StringFormatter.format("Appointment ID not found %d", appointmentId).getValue());
+			// throw new Exception(String.format("Appointment ID not found: %s", appointmentId));
+			return;
+		}
+		if (!isValidAppointment(appointment)) {
+			//throw new Exception(String.format("Failed to add invalid Appointment"));
+			return;
 		}
 		// persist
+		appointment.setAppointmentId(appointmentId);
 		appointmentRepo.put(appointmentId, appointment);
 	}
 
 	@Override
-	public void removeAppointment(int appointmentId) {
+	public void removeAppointment(String appointmentId) {
 		// persist
-	}
+		if (findAppointment(appointmentId) == null) {
+			return;
+		}
 
+		appointmentRepo.remove(appointmentId);
+	}
 
 	public static void main(String[] args) {
 		AppointmentScheduler appointmentScheduler = new AppointmentScheduler();
 		List<Appointment> appointmentList = appointmentScheduler.listAppointments();
 
 		System.out.println(appointmentList.size());
-
 	}
 }
