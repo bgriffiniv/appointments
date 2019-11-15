@@ -1,63 +1,58 @@
 package com.bgriffiniv.challenges.nielsensports.appointments.model;
 
-import com.bgriffiniv.challenges.nielsensports.appointments.model.info.AvailabilityInfo;
-import com.bgriffiniv.challenges.nielsensports.appointments.model.info.ContactInfo;
-import com.bgriffiniv.challenges.nielsensports.appointments.model.info.ServiceInfo;
-import com.bgriffiniv.challenges.nielsensports.appointments.model.info.VehicleInfo;
+import com.bgriffiniv.challenges.nielsensports.appointments.AppointmentScheduler;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import javax.annotation.security.RunAs;
-import javax.xml.validation.ValidatorHandler;
-import java.lang.invoke.SerializedLambda;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class AppointmentSchedulerTest {
 
 	private AppointmentScheduler instance;
 
-	private ServiceInfo basicServiceInfo;
-	private AvailabilityInfo basicAvailabilityInfo;
-	private ContactInfo basicContactInfo;
-	private VehicleInfo basicVehicleInfo;
+	private Service basicService;
+	private Availability basicAvailability;
+	private Contact basicContact;
+	private Vehicle basicVehicle;
 
 	@BeforeEach
 	void setUp() {
 		List<String> serviceList = new ArrayList<>();
 		serviceList.add("TIRE_CHANGE");
 
-		basicServiceInfo = new ServiceInfo();
-		basicServiceInfo.setServiceList(serviceList);
+		basicService = new Service();
+		basicService.setServiceList(serviceList);
 
-		basicAvailabilityInfo = new AvailabilityInfo();
-		basicAvailabilityInfo.setAvailability1("foo");
-		basicAvailabilityInfo.setAvailability2("bar");
+		basicAvailability = new Availability();
+		basicAvailability.setAvailability1("foo");
+		basicAvailability.setAvailability2("bar");
 
-		basicContactInfo = new ContactInfo();
-		basicContactInfo.setAddress1("blah");
-		basicContactInfo.setCity("city");
-		basicContactInfo.setState("ST");
-		basicContactInfo.setZip("12345");
-		basicContactInfo.setEmail("email@example.com");
-		basicContactInfo.setContactBy("PHONE");
-		basicContactInfo.setFirstName("First");
-		basicContactInfo.setLastName("Last");
+		basicContact = new Contact();
+		basicContact.setAddress1("blah");
+		basicContact.setCity("city");
+		basicContact.setState("ST");
+		basicContact.setZip("12345");
+		basicContact.setEmail("email@example.com");
+		basicContact.setContactBy("PHONE");
+		basicContact.setFirstName("First");
+		basicContact.setLastName("Last");
 
-		basicVehicleInfo = new VehicleInfo();
-		basicVehicleInfo.setMake("Make");
-		basicVehicleInfo.setMileage("1000");
-		basicVehicleInfo.setModel("Model");
-		basicVehicleInfo.setYear("2010");
+		basicVehicle = new Vehicle();
+		basicVehicle.setMake("Make");
+		basicVehicle.setMileage("1000");
+		basicVehicle.setModel("Model");
+		basicVehicle.setYear("2010");
 
 		Appointment appointment = new Appointment();
-		appointment.setServiceInfo(basicServiceInfo);
-		appointment.setContactInfo(basicContactInfo);
-		appointment.setAvailabilityInfo(basicAvailabilityInfo);
-		appointment.setVehicleInfo(basicVehicleInfo);
+		appointment.setService(basicService);
+		appointment.setContact(basicContact);
+		appointment.setAvailability(basicAvailability);
+		appointment.setVehicle(basicVehicle);
 
 		instance = new AppointmentScheduler();
 		try {
@@ -70,7 +65,7 @@ class AppointmentSchedulerTest {
 	@AfterEach
 	void tearDown() {
 		for (Appointment appointment: instance.listAppointments()) {
-			instance.removeAppointment(appointment.getAppointmentId());
+			instance.removeAppointment(appointment.getId());
 		}
 	}
 
@@ -84,43 +79,36 @@ class AppointmentSchedulerTest {
 	void addAppointment_happyPath_sizeShouldBeTwo() {
 		List<String> serviceList = new ArrayList<>();
 		serviceList.add("TIRE_ROTATION");
-		ServiceInfo serviceInfo = new ServiceInfo();
-		serviceInfo.setServiceList(serviceList);
+		Service service = new Service();
+		service.setServiceList(serviceList);
 
 		Appointment expected = new Appointment();
-		expected.setServiceInfo(serviceInfo);
-		expected.setContactInfo(basicContactInfo);
-		expected.setAvailabilityInfo(basicAvailabilityInfo);
-		expected.setVehicleInfo(basicVehicleInfo);
+		expected.setService(service);
+		expected.setContact(basicContact);
+		expected.setAvailability(basicAvailability);
+		expected.setVehicle(basicVehicle);
 
 		instance.addAppointment(expected);
 		String expectedAppointmentId = "1";
-		expected.setAppointmentId(expectedAppointmentId);
+		expected.setId(expectedAppointmentId);
 
 		Appointment actual = instance.findAppointment(expectedAppointmentId);
-
 		assertEquals(2, instance.countAppointments());
 		assertEquals(expected, actual);
 	}
 
 	@Test
-	void findAppointment_happyPath_appointmentShouldHaveTireChangeService() {
-		List<String> serviceList = new ArrayList<>();
-		serviceList.add("TIRE_CHANGE");
-		ServiceInfo serviceInfo = new ServiceInfo();
-		serviceInfo.setServiceList(serviceList);
-
+	void findAppointment_happyPath_appointmentShouldBeExpected() {
 		Appointment expected = new Appointment();
-		expected.setServiceInfo(serviceInfo);
-		expected.setContactInfo(basicContactInfo);
-		expected.setAvailabilityInfo(basicAvailabilityInfo);
-		expected.setVehicleInfo(basicVehicleInfo);
+		expected.setService(basicService);
+		expected.setContact(basicContact);
+		expected.setAvailability(basicAvailability);
+		expected.setVehicle(basicVehicle);
 
 		String expectedAppointmentId = "0";
-		expected.setAppointmentId(expectedAppointmentId);
+		expected.setId(expectedAppointmentId);
 
 		Appointment actual = instance.findAppointment(expectedAppointmentId);
-
 		assertEquals(expected, actual);
 	}
 
@@ -136,7 +124,24 @@ class AppointmentSchedulerTest {
 	void listAppointments_happyPath_sizeShouldBeOne() {
 		List<Appointment> appointmentList = instance.listAppointments();
 
+		Appointment expected = new Appointment();
+		expected.setService(basicService);
+		expected.setContact(basicContact);
+		expected.setAvailability(basicAvailability);
+		expected.setVehicle(basicVehicle);
+
+		String expectedAppointmentId = "0";
+		expected.setId(expectedAppointmentId);
+
 		assertEquals(1, appointmentList.size());
+		assertTrue(appointmentList.contains(expected));
+	}
+
+	@Test
+	void countAppointments_happyPath_countShouldEqualSize() {
+		List<Appointment> appointmentList = instance.listAppointments();
+
+		assertEquals(appointmentList.size(), instance.countAppointments());
 	}
 
 	@Test
@@ -144,16 +149,15 @@ class AppointmentSchedulerTest {
 		instance.editAppointment("1", null);
 
 		Appointment expected = new Appointment();
-		expected.setServiceInfo(basicServiceInfo);
-		expected.setContactInfo(basicContactInfo);
-		expected.setAvailabilityInfo(basicAvailabilityInfo);
-		expected.setVehicleInfo(basicVehicleInfo);
+		expected.setService(basicService);
+		expected.setContact(basicContact);
+		expected.setAvailability(basicAvailability);
+		expected.setVehicle(basicVehicle);
 
 		String expectedAppointmentId = "0";
-		expected.setAppointmentId(expectedAppointmentId);
+		expected.setId(expectedAppointmentId);
 
 		Appointment actual = instance.findAppointment(expectedAppointmentId);
-
 		assertEquals(1, instance.countAppointments());
 		assertEquals(expected, actual);
 	}
@@ -162,13 +166,13 @@ class AppointmentSchedulerTest {
 		instance.editAppointment("0", null);
 
 		Appointment expected = new Appointment();
-		expected.setServiceInfo(basicServiceInfo);
-		expected.setContactInfo(basicContactInfo);
-		expected.setAvailabilityInfo(basicAvailabilityInfo);
-		expected.setVehicleInfo(basicVehicleInfo);
+		expected.setService(basicService);
+		expected.setContact(basicContact);
+		expected.setAvailability(basicAvailability);
+		expected.setVehicle(basicVehicle);
 
 		String expectedAppointmentId = "0";
-		expected.setAppointmentId(expectedAppointmentId);
+		expected.setId(expectedAppointmentId);
 
 		Appointment actual = instance.findAppointment(expectedAppointmentId);
 		assertEquals(1, instance.countAppointments());
@@ -176,21 +180,21 @@ class AppointmentSchedulerTest {
 	}
 	@Test
 	void editAppointment_happyPath_appointmentShouldHaveWiperFluidService() {
-		List<String> serviceList = basicServiceInfo.getServiceList();
+		List<String> serviceList = basicService.getServiceList();
 		serviceList.add("WIPER_FLUID");
 
-		ServiceInfo newServiceInfo = new ServiceInfo();
-		newServiceInfo.setServiceList(serviceList);
+		Service newService = new Service();
+		newService.setServiceList(serviceList);
 
 		Appointment expected = new Appointment();
-		expected.setServiceInfo(newServiceInfo);
-		expected.setContactInfo(basicContactInfo);
-		expected.setAvailabilityInfo(basicAvailabilityInfo);
-		expected.setVehicleInfo(basicVehicleInfo);
+		expected.setService(newService);
+		expected.setContact(basicContact);
+		expected.setAvailability(basicAvailability);
+		expected.setVehicle(basicVehicle);
 
 		String expectedAppointmentId = "0";
 		instance.editAppointment(expectedAppointmentId, expected);
-		expected.setAppointmentId(expectedAppointmentId);
+		expected.setId(expectedAppointmentId);
 
 		Appointment actual = instance.findAppointment(expectedAppointmentId);
 		assertEquals(1, instance.countAppointments());

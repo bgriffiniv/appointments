@@ -1,9 +1,16 @@
-package com.bgriffiniv.challenges.nielsensports.appointments.model.info;
+package com.bgriffiniv.challenges.nielsensports.appointments.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.Objects;
 
-public class ContactInfo {
+@Entity
+public class Contact {
 
+	@Id
+	@GeneratedValue
+	private String id;
 	private String firstName;
 	private String lastName;
 	private String phone;
@@ -98,8 +105,8 @@ public class ContactInfo {
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
-		if (!(o instanceof ContactInfo)) return false;
-		ContactInfo that = (ContactInfo) o;
+		if (!(o instanceof Contact)) return false;
+		Contact that = (Contact) o;
 		return getFirstName().equals(that.getFirstName()) &&
 				getLastName().equals(that.getLastName()) &&
 				getPhone().equals(that.getPhone()) &&

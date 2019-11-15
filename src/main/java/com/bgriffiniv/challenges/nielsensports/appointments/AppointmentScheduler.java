@@ -1,10 +1,18 @@
-package com.bgriffiniv.challenges.nielsensports.appointments.model;
+package com.bgriffiniv.challenges.nielsensports.appointments;
 
-import java.util.*;
+import com.bgriffiniv.challenges.nielsensports.appointments.model.Appointment;
+import com.bgriffiniv.challenges.nielsensports.appointments.service.AppointmentService;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class AppointmentScheduler implements IAppointmentScheduler {
 
 	private final static Map<String, Appointment> appointmentRepo = new HashMap<>();
+	@Autowired
+	private AppointmentService appointmentService;
 
 	@Override
 	public void addAppointment(Appointment appointment) {
@@ -14,7 +22,7 @@ public class AppointmentScheduler implements IAppointmentScheduler {
 			return;
 		}
 		String newAppointmentId = "" + appointmentRepo.entrySet().size();
-		appointment.setAppointmentId(newAppointmentId);
+		appointment.setId(newAppointmentId);
 		appointmentRepo.put(newAppointmentId, appointment);
 	}
 
@@ -38,7 +46,7 @@ public class AppointmentScheduler implements IAppointmentScheduler {
 	@Override
 	public List<Appointment> listAppointments() {
 		// get from db
-		return new ArrayList<>(appointmentRepo.values());
+		return appointmentService.list();
 	}
 
 	@Override
@@ -58,7 +66,7 @@ public class AppointmentScheduler implements IAppointmentScheduler {
 			return;
 		}
 		// persist
-		appointment.setAppointmentId(appointmentId);
+		appointment.setId(appointmentId);
 		appointmentRepo.put(appointmentId, appointment);
 	}
 

@@ -1,4 +1,6 @@
-package com.bgriffiniv.challenges.nielsensports.appointments.model;
+package com.bgriffiniv.challenges.nielsensports.appointments;
+
+import com.bgriffiniv.challenges.nielsensports.appointments.model.Appointment;
 
 import java.util.List;
 

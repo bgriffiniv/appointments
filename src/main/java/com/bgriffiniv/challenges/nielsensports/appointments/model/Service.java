@@ -1,10 +1,19 @@
-package com.bgriffiniv.challenges.nielsensports.appointments.model.info;
+package com.bgriffiniv.challenges.nielsensports.appointments.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.List;
 import java.util.Objects;
 
-public class ServiceInfo {
-	List<String> serviceList;
+@Entity
+public class Service {
+
+	@Id
+	@GeneratedValue
+	private String id;
+	//@ManyToMany
+	private List<String> serviceList;
 
 	public List<String> getServiceList() {
 		return serviceList;
@@ -17,8 +26,8 @@ public class ServiceInfo {
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
-		if (!(o instanceof ServiceInfo)) return false;
-		ServiceInfo that = (ServiceInfo) o;
+		if (!(o instanceof Service)) return false;
+		Service that = (Service) o;
 		return getServiceList().equals(that.getServiceList());
 	}
 
@@ -27,7 +36,7 @@ public class ServiceInfo {
 		return Objects.hash(getServiceList());
 	}
 
-	enum Service {
+	enum ServiceType {
 		TIRE_ROTATION,
 		TIRE_REPAIR,
 		TIRE_CHANGE,

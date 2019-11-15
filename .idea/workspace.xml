@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7d0644b4-4f54-4dd0-854f-15142b3e6622" name="Default Changelist" comment="Add unit tests">
+    <list default="true" id="7d0644b4-4f54-4dd0-854f-15142b3e6622" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/data/IAppointmentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/data/IAvailabilityRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/data/IContactRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/data/IServiceRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/data/IVehicleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/service/AppointmentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/data/demo" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/Appointment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/AppointmentScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/AppointmentScheduler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/IAppointmentScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/IAppointmentScheduler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/info/AvailabilityInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/Availability.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/info/ContactInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/Contact.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/info/ServiceInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/info/VehicleInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/Vehicle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/bgriffiniv/challenges/nielsensports/appointments/model/AppointmentSchedulerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/bgriffiniv/challenges/nielsensports/appointments/model/AppointmentSchedulerTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -57,6 +72,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -265,7 +281,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573837482636</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Simplify tests with global data&#10;&#10;- comply with non-null field rules">
+      <created>1573839356077</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1573839356077</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -299,6 +322,7 @@
     <MESSAGE value="Update .gitignore to include Spring Boot defaults" />
     <MESSAGE value="Add AvailabilityInfo class&#10;&#10;- store date and time in a single Date object&#10;- TODO: use millisecond representation&#10;- TODO: offer converters in case strings are given&#10;- TODO: persist data in as close to JSON as possible" />
     <MESSAGE value="Add unit tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add unit tests" />
+    <MESSAGE value="Simplify tests with global data&#10;&#10;- comply with non-null field rules" />
+    <option name="LAST_COMMIT_MESSAGE" value="Simplify tests with global data&#10;&#10;- comply with non-null field rules" />
   </component>
 </project>

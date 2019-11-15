@@ -1,8 +1,16 @@
-package com.bgriffiniv.challenges.nielsensports.appointments.model.info;
+package com.bgriffiniv.challenges.nielsensports.appointments.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.Objects;
 
-public class AvailabilityInfo {
+@Entity
+public class Availability {
+
+	@Id
+	@GeneratedValue
+	private String id;
 	private String availability1;
 	private String availability2;
 
@@ -25,8 +33,8 @@ public class AvailabilityInfo {
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
-		if (!(o instanceof AvailabilityInfo)) return false;
-		AvailabilityInfo that = (AvailabilityInfo) o;
+		if (!(o instanceof Availability)) return false;
+		Availability that = (Availability) o;
 		return getAvailability1().equals(that.getAvailability1()) &&
 				getAvailability2().equals(that.getAvailability2());
 	}

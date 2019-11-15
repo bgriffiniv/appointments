@@ -1,9 +1,16 @@
-package com.bgriffiniv.challenges.nielsensports.appointments.model.info;
+package com.bgriffiniv.challenges.nielsensports.appointments.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.Objects;
 
-public class VehicleInfo {
+@Entity
+public class Vehicle {
 
+	@Id
+	@GeneratedValue
+	private String id;
 	private String year;
 	private String make;
 	private String model;
@@ -44,8 +51,8 @@ public class VehicleInfo {
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
-		if (!(o instanceof VehicleInfo)) return false;
-		VehicleInfo that = (VehicleInfo) o;
+		if (!(o instanceof Vehicle)) return false;
+		Vehicle that = (Vehicle) o;
 		return getYear().equals(that.getYear()) &&
 				getMake().equals(that.getMake()) &&
 				getModel().equals(that.getModel()) &&

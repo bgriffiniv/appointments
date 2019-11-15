@@ -1,60 +1,72 @@
 package com.bgriffiniv.challenges.nielsensports.appointments.model;
 
-import com.bgriffiniv.challenges.nielsensports.appointments.model.info.AvailabilityInfo;
-import com.bgriffiniv.challenges.nielsensports.appointments.model.info.ContactInfo;
-import com.bgriffiniv.challenges.nielsensports.appointments.model.info.ServiceInfo;
-import com.bgriffiniv.challenges.nielsensports.appointments.model.info.VehicleInfo;
+import org.springframework.data.rest.core.annotation.RestResource;
 
-import java.util.List;
+import javax.persistence.*;
 import java.util.Objects;
 
+@Entity
 public class Appointment {
 
-	private String appointmentId;
-	private ContactInfo contactInfo;
-	private VehicleInfo vehicleInfo;
-	private ServiceInfo serviceInfo;
-	private AvailabilityInfo availabilityInfo;
+	@Id
+	@GeneratedValue
+	private String id;
+	@ManyToOne
+	@JoinColumn(name = "contact_id")
+	@RestResource(path = "contact", rel = "contact")
+	private Contact contact;
+	@ManyToOne
+	@JoinColumn(name = "vehicle_id")
+	@RestResource(path = "vehicle", rel = "vehicle")
+	private Vehicle vehicle;
+	@OneToOne
+	@JoinColumn(name = "service_id")
+	@RestResource(path = "service", rel = "service")
+	private Service service;
+	@OneToOne // one set of availabilities per appointment
+	@JoinColumn(name = "availability_id")
+	@RestResource(path = "availability", rel = "availability")
+	private Availability availability;
 	private String notes;
 
-	public String getAppointmentId() {
-		return appointmentId;
+	public String getId() {
+		return id;
 	}
 
-	public void setAppointmentId(String appointmentId) {
-		this.appointmentId = appointmentId;
+	public void setId(String id) {
+		this.id = id;
 	}
 
-	public ContactInfo getContactInfo() {
-		return contactInfo;
+	public Contact getContact() {
+		return contact;
 	}
 
-	public void setContactInfo(ContactInfo contactInfo) {
-		this.contactInfo = contactInfo;
+	public void setContact(Contact contact) {
+		this.contact = contact;
 	}
 
-	public VehicleInfo getVehicleInfo() {
-		return vehicleInfo;
+	public Vehicle getVehicle() {
+		return vehicle;
 	}
 
-	public void setVehicleInfo(VehicleInfo vehicleInfo) {
-		this.vehicleInfo = vehicleInfo;
+	public void setVehicle(Vehicle vehicle) {
+		this.vehicle = vehicle;
 	}
 
-	public ServiceInfo getServiceInfo() {
-		return serviceInfo;
+	public Service getService() {
+		return service;
 	}
 
-	public void setServiceInfo(ServiceInfo serviceInfo) {
-		this.serviceInfo = serviceInfo;
+	public void setService(Service service) {
+		this.service = service;
 	}
 
-	public AvailabilityInfo getAvailabilityInfo() {
-		return availabilityInfo;
+	public Availability getAvailability() {
+		return availability;
 	}
 
-	public void setAvailabilityInfo(AvailabilityInfo availabilityInfo) {
-		this.availabilityInfo = availabilityInfo;
+	public void setAvailability(Availability availability) {
+		this.availability = availability;
 	}
 
 	public String getNotes() {
@@ -70,16 +82,16 @@ public class Appointment {
 		if (this == o) return true;
 		if (!(o instanceof Appointment)) return false;
 		Appointment that = (Appointment) o;
-		return getAppointmentId().equals(that.getAppointmentId()) &&
-				getContactInfo().equals(that.getContactInfo()) &&
-				getVehicleInfo().equals(that.getVehicleInfo()) &&
-				getServiceInfo().equals(that.getServiceInfo()) &&
-				getAvailabilityInfo().equals(that.getAvailabilityInfo()) &&
+		return getId().equals(that.getId()) &&
+				getContact().equals(that.getContact()) &&
+				getVehicle().equals(that.getVehicle()) &&
+				getService().equals(that.getService()) &&
+				getAvailability().equals(that.getAvailability()) &&
 				Objects.equals(getNotes(), that.getNotes());
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(getAppointmentId(), getContactInfo(), getVehicleInfo(), getServiceInfo(), getAvailabilityInfo(), getNotes());
+		return Objects.hash(getId(), getContact(), getVehicle(), getService(), getAvailability(), getNotes());
 	}
 }
