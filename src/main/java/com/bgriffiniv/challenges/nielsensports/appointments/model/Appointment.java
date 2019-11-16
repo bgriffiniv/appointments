@@ -3,6 +3,7 @@ package com.bgriffiniv.challenges.nielsensports.appointments.model;
 import org.springframework.data.rest.core.annotation.RestResource;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -11,22 +12,26 @@ public class Appointment {
 	@Id
 	@GeneratedValue
 	private String id;
+
 	@ManyToOne
 	@JoinColumn(name = "contact_id")
 	@RestResource(path = "contact", rel = "contact")
 	private Contact contact;
+
 	@ManyToOne
 	@JoinColumn(name = "vehicle_id")
 	@RestResource(path = "vehicle", rel = "vehicle")
 	private Vehicle vehicle;
-	@OneToOne
-	@JoinColumn(name = "service_id")
+
+    @ManyToMany(mappedBy = "serviceList")
 	@RestResource(path = "service", rel = "service")
-	private Service service;
+    private List<Service> serviceList;
+
 	@OneToOne // one set of availabilities per appointment
 	@JoinColumn(name = "availability_id")
 	@RestResource(path = "availability", rel = "availability")
 	private Availability availability;
+
 	private String notes;
 
 	public String getId() {
@@ -53,12 +58,12 @@ public class Appointment {
 		this.vehicle = vehicle;
 	}
 
-	public Service getService() {
-		return service;
-	}
+    public List<Service> getServiceList() {
+        return serviceList;
+    }
 
-	public void setService(Service service) {
-		this.service = service;
+    public void setServiceList(List<Service> serviceList) {
+        this.serviceList = serviceList;
 	}
 
 	public Availability getAvailability() {
@@ -85,13 +90,13 @@ public class Appointment {
 		return getId().equals(that.getId()) &&
 				getContact().equals(that.getContact()) &&
 				getVehicle().equals(that.getVehicle()) &&
-				getService().equals(that.getService()) &&
+                getServiceList().equals(that.getServiceList()) &&
 				getAvailability().equals(that.getAvailability()) &&
 				Objects.equals(getNotes(), that.getNotes());
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(getId(), getContact(), getVehicle(), getService(), getAvailability(), getNotes());
+        return Objects.hash(getId(), getContact(), getVehicle(), getServiceList(), getAvailability(), getNotes());
 	}
 }

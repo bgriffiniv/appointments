@@ -15,18 +15,18 @@ class AppointmentSchedulerTest {
 
 	private AppointmentScheduler instance;
 
-	private Service basicService;
+    private List<Service> basicServiceList;
 	private Availability basicAvailability;
 	private Contact basicContact;
 	private Vehicle basicVehicle;
 
 	@BeforeEach
 	void setUp() {
-		List<String> serviceList = new ArrayList<>();
-		serviceList.add("TIRE_CHANGE");
+        Service service = new Service();
+        service.setDescription("TIRE_CHANGE");
 
-		basicService = new Service();
-		basicService.setServiceList(serviceList);
+        basicServiceList = new ArrayList<>();
+        basicServiceList.add(service);
 
 		basicAvailability = new Availability();
 		basicAvailability.setAvailability1("foo");
@@ -49,7 +49,7 @@ class AppointmentSchedulerTest {
 		basicVehicle.setYear("2010");
 
 		Appointment appointment = new Appointment();
-		appointment.setService(basicService);
+        appointment.setServiceList(basicServiceList);
 		appointment.setContact(basicContact);
 		appointment.setAvailability(basicAvailability);
 		appointment.setVehicle(basicVehicle);
@@ -77,13 +77,13 @@ class AppointmentSchedulerTest {
 
 	@Test
 	void addAppointment_happyPath_sizeShouldBeTwo() {
-		List<String> serviceList = new ArrayList<>();
-		serviceList.add("TIRE_ROTATION");
 		Service service = new Service();
-		service.setServiceList(serviceList);
+        service.setDescription("TIRE_ROTATION");
+        List<Service> serviceList = new ArrayList<>();
+        serviceList.add(service);
 
 		Appointment expected = new Appointment();
-		expected.setService(service);
+        expected.setServiceList(serviceList);
 		expected.setContact(basicContact);
 		expected.setAvailability(basicAvailability);
 		expected.setVehicle(basicVehicle);
@@ -100,7 +100,7 @@ class AppointmentSchedulerTest {
 	@Test
 	void findAppointment_happyPath_appointmentShouldBeExpected() {
 		Appointment expected = new Appointment();
-		expected.setService(basicService);
+        expected.setServiceList(basicServiceList);
 		expected.setContact(basicContact);
 		expected.setAvailability(basicAvailability);
 		expected.setVehicle(basicVehicle);
@@ -125,7 +125,7 @@ class AppointmentSchedulerTest {
 		List<Appointment> appointmentList = instance.listAppointments();
 
 		Appointment expected = new Appointment();
-		expected.setService(basicService);
+        expected.setServiceList(basicServiceList);
 		expected.setContact(basicContact);
 		expected.setAvailability(basicAvailability);
 		expected.setVehicle(basicVehicle);
@@ -149,7 +149,7 @@ class AppointmentSchedulerTest {
 		instance.editAppointment("1", null);
 
 		Appointment expected = new Appointment();
-		expected.setService(basicService);
+        expected.setServiceList(basicServiceList);
 		expected.setContact(basicContact);
 		expected.setAvailability(basicAvailability);
 		expected.setVehicle(basicVehicle);
@@ -166,7 +166,7 @@ class AppointmentSchedulerTest {
 		instance.editAppointment("0", null);
 
 		Appointment expected = new Appointment();
-		expected.setService(basicService);
+        expected.setServiceList(basicServiceList);
 		expected.setContact(basicContact);
 		expected.setAvailability(basicAvailability);
 		expected.setVehicle(basicVehicle);
@@ -180,14 +180,14 @@ class AppointmentSchedulerTest {
 	}
 	@Test
 	void editAppointment_happyPath_appointmentShouldHaveWiperFluidService() {
-		List<String> serviceList = basicService.getServiceList();
-		serviceList.add("WIPER_FLUID");
-
-		Service newService = new Service();
-		newService.setServiceList(serviceList);
+        Service service = new Service();
+        service.setDescription("WIPER_FLUID");
+        List<Service> newServiceList = new ArrayList<>();
+        newServiceList.addAll(basicServiceList);
+        newServiceList.add(service);
 
 		Appointment expected = new Appointment();
-		expected.setService(newService);
+        expected.setServiceList(newServiceList);
 		expected.setContact(basicContact);
 		expected.setAvailability(basicAvailability);
 		expected.setVehicle(basicVehicle);
