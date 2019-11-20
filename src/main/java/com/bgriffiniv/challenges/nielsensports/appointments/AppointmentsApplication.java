@@ -9,7 +9,6 @@ public class AppointmentsApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(AppointmentsApplication.class, args);
 		// spawn a thread to randomly add appointments
-
 	}
 
 }

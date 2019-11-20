@@ -22,6 +22,31 @@ public class Contact {
 	private String zip;
 	private String contactBy;
 
+	public Contact() {
+	}
+
+	public Contact(String id, String firstName, String lastName, String phone, String email, String address1, String address2, String city, String state, String zip, String contactBy) {
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.phone = phone;
+		this.email = email;
+		this.address1 = address1;
+		this.address2 = address2;
+		this.city = city;
+		this.state = state;
+		this.zip = zip;
+		this.contactBy = contactBy;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
 	public String getFirstName() {
 		return firstName;
 	}
@@ -106,22 +131,23 @@ public class Contact {
 	public boolean equals(Object o) {
 		if (this == o) return true;
 		if (!(o instanceof Contact)) return false;
-		Contact that = (Contact) o;
-		return getFirstName().equals(that.getFirstName()) &&
-				getLastName().equals(that.getLastName()) &&
-				getPhone().equals(that.getPhone()) &&
-				getEmail().equals(that.getEmail()) &&
-				getAddress1().equals(that.getAddress1()) &&
-				Objects.equals(getAddress2(), that.getAddress2()) &&
-				getCity().equals(that.getCity()) &&
-				getState().equals(that.getState()) &&
-				getZip().equals(that.getZip()) &&
-				getContactBy().equals(that.getContactBy());
+		Contact contact = (Contact) o;
+		return getId().equals(contact.getId()) &&
+				getFirstName().equals(contact.getFirstName()) &&
+				getLastName().equals(contact.getLastName()) &&
+				getPhone().equals(contact.getPhone()) &&
+				getEmail().equals(contact.getEmail()) &&
+				getAddress1().equals(contact.getAddress1()) &&
+				Objects.equals(getAddress2(), contact.getAddress2()) &&
+				getCity().equals(contact.getCity()) &&
+				getState().equals(contact.getState()) &&
+				getZip().equals(contact.getZip()) &&
+				getContactBy().equals(contact.getContactBy());
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(getFirstName(), getLastName(), getPhone(), getEmail(), getAddress1(), getAddress2(), getCity(), getState(), getZip(), getContactBy());
+		return Objects.hash(getId(), getFirstName(), getLastName(), getPhone(), getEmail(), getAddress1(), getAddress2(), getCity(), getState(), getZip(), getContactBy());
 	}
 
 	enum ContactBy {

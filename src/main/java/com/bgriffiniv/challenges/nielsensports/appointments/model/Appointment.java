@@ -1,7 +1,5 @@
 package com.bgriffiniv.challenges.nielsensports.appointments.model;
 
-import org.springframework.data.rest.core.annotation.RestResource;
-
 import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
@@ -15,24 +13,36 @@ public class Appointment {
 
 	@ManyToOne
 	@JoinColumn(name = "contact_id")
-	@RestResource(path = "contact", rel = "contact")
 	private Contact contact;
 
 	@ManyToOne
 	@JoinColumn(name = "vehicle_id")
-	@RestResource(path = "vehicle", rel = "vehicle")
 	private Vehicle vehicle;
 
-    @ManyToMany(mappedBy = "serviceList")
-	@RestResource(path = "service", rel = "service")
-    private List<Service> serviceList;
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "appointment_service",
+			joinColumns = @JoinColumn(name = "appointment_id", referencedColumnName = "id"),
+			inverseJoinColumns = @JoinColumn(name = "service_id", referencedColumnName = "id")
+	)
+	private List<Service> serviceList;
 
-	@OneToOne // one set of availabilities per appointment
-	@JoinColumn(name = "availability_id")
-	@RestResource(path = "availability", rel = "availability")
-	private Availability availability;
+	private String availability1;
+	private String availability2;
 
 	private String notes;
+
+	public Appointment() {
+	}
+
+	public Appointment(String id, Contact contact, Vehicle vehicle, List<Service> serviceList, String availability1, String availability2, String notes) {
+		this.id = id;
+		this.contact = contact;
+		this.vehicle = vehicle;
+		this.serviceList = serviceList;
+		this.availability1 = availability1;
+		this.availability2 = availability2;
+		this.notes = notes;
+	}
 
 	public String getId() {
 		return id;
@@ -66,12 +76,20 @@ public class Appointment {
         this.serviceList = serviceList;
 	}
 
-	public Availability getAvailability() {
-		return availability;
+	public String getAvailability1() {
+		return availability1;
 	}
 
-	public void setAvailability(Availability availability) {
-		this.availability = availability;
+	public void setAvailability1(String availability1) {
+		this.availability1 = availability1;
+	}
+
+	public String getAvailability2() {
+		return availability2;
+	}
+
+	public void setAvailability2(String availability2) {
+		this.availability2 = availability2;
 	}
 
 	public String getNotes() {
@@ -90,13 +108,14 @@ public class Appointment {
 		return getId().equals(that.getId()) &&
 				getContact().equals(that.getContact()) &&
 				getVehicle().equals(that.getVehicle()) &&
-                getServiceList().equals(that.getServiceList()) &&
-				getAvailability().equals(that.getAvailability()) &&
+				getServiceList().equals(that.getServiceList()) &&
+				getAvailability1().equals(that.getAvailability1()) &&
+				Objects.equals(getAvailability2(), that.getAvailability2()) &&
 				Objects.equals(getNotes(), that.getNotes());
 	}
 
 	@Override
 	public int hashCode() {
-        return Objects.hash(getId(), getContact(), getVehicle(), getServiceList(), getAvailability(), getNotes());
+		return Objects.hash(getId(), getContact(), getVehicle(), getServiceList(), getAvailability1(), getAvailability2(), getNotes());
 	}
 }

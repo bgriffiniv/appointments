@@ -1,8 +1,10 @@
 package com.bgriffiniv.challenges.nielsensports.appointments.data;
 
 import com.bgriffiniv.challenges.nielsensports.appointments.model.Vehicle;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.stereotype.Repository;
 
-public interface IVehicleRepository extends CrudRepository<Vehicle, String> {
+@Repository
+public interface IVehicleRepository extends PagingAndSortingRepository<Vehicle, String> {
 
 }

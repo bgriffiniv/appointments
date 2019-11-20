@@ -1,9 +1,19 @@
-package com.bgriffiniv.challenges.nielsensports.appointments.model;
+package com.bgriffiniv.challenges.nielsensports.appointments.service;
 
-import com.bgriffiniv.challenges.nielsensports.appointments.AppointmentScheduler;
+import com.bgriffiniv.challenges.nielsensports.appointments.data.IAppointmentRepository;
+import com.bgriffiniv.challenges.nielsensports.appointments.model.Appointment;
+import com.bgriffiniv.challenges.nielsensports.appointments.model.Contact;
+import com.bgriffiniv.challenges.nielsensports.appointments.model.Service;
+import com.bgriffiniv.challenges.nielsensports.appointments.model.Vehicle;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,12 +21,20 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class AppointmentSchedulerTest {
+@RunWith(SpringRunner.class)
+@SpringBootTest
+class AppointmentServiceTest {
 
-	private AppointmentScheduler instance;
+	String basicAvailability1;
+	String basicAvailability2;
 
     private List<Service> basicServiceList;
-	private Availability basicAvailability;
+	String basicNotes;
+	@Mock
+	private IAppointmentRepository appointmentRepository;
+	@InjectMocks
+	@Autowired
+	private AppointmentService instance;
 	private Contact basicContact;
 	private Vehicle basicVehicle;
 
@@ -28,9 +46,9 @@ class AppointmentSchedulerTest {
         basicServiceList = new ArrayList<>();
         basicServiceList.add(service);
 
-		basicAvailability = new Availability();
-		basicAvailability.setAvailability1("foo");
-		basicAvailability.setAvailability2("bar");
+		basicAvailability1 = "2019/11/19@12:05:50";
+		basicAvailability1 = "2019/11/25@14:15:30";
+		basicNotes = "Some notes...";
 
 		basicContact = new Contact();
 		basicContact.setAddress1("blah");
@@ -51,10 +69,11 @@ class AppointmentSchedulerTest {
 		Appointment appointment = new Appointment();
         appointment.setServiceList(basicServiceList);
 		appointment.setContact(basicContact);
-		appointment.setAvailability(basicAvailability);
+		appointment.setAvailability1(basicAvailability1);
+		appointment.setAvailability2(basicAvailability2);
 		appointment.setVehicle(basicVehicle);
+		appointment.setNotes(basicNotes);
 
-		instance = new AppointmentScheduler();
 		try {
 			instance.addAppointment(appointment);
 		} catch (Exception e) {
@@ -85,7 +104,8 @@ class AppointmentSchedulerTest {
 		Appointment expected = new Appointment();
         expected.setServiceList(serviceList);
 		expected.setContact(basicContact);
-		expected.setAvailability(basicAvailability);
+		expected.setAvailability1(basicAvailability1);
+		expected.setAvailability2(basicAvailability2);
 		expected.setVehicle(basicVehicle);
 
 		instance.addAppointment(expected);
@@ -102,7 +122,8 @@ class AppointmentSchedulerTest {
 		Appointment expected = new Appointment();
         expected.setServiceList(basicServiceList);
 		expected.setContact(basicContact);
-		expected.setAvailability(basicAvailability);
+		expected.setAvailability1(basicAvailability1);
+		expected.setAvailability2(basicAvailability2);
 		expected.setVehicle(basicVehicle);
 
 		String expectedAppointmentId = "0";
@@ -127,7 +148,8 @@ class AppointmentSchedulerTest {
 		Appointment expected = new Appointment();
         expected.setServiceList(basicServiceList);
 		expected.setContact(basicContact);
-		expected.setAvailability(basicAvailability);
+		expected.setAvailability1(basicAvailability1);
+		expected.setAvailability2(basicAvailability2);
 		expected.setVehicle(basicVehicle);
 
 		String expectedAppointmentId = "0";
@@ -151,7 +173,8 @@ class AppointmentSchedulerTest {
 		Appointment expected = new Appointment();
         expected.setServiceList(basicServiceList);
 		expected.setContact(basicContact);
-		expected.setAvailability(basicAvailability);
+		expected.setAvailability1(basicAvailability1);
+		expected.setAvailability2(basicAvailability2);
 		expected.setVehicle(basicVehicle);
 
 		String expectedAppointmentId = "0";
@@ -168,7 +191,8 @@ class AppointmentSchedulerTest {
 		Appointment expected = new Appointment();
         expected.setServiceList(basicServiceList);
 		expected.setContact(basicContact);
-		expected.setAvailability(basicAvailability);
+		expected.setAvailability1(basicAvailability1);
+		expected.setAvailability2(basicAvailability2);
 		expected.setVehicle(basicVehicle);
 
 		String expectedAppointmentId = "0";
@@ -189,7 +213,8 @@ class AppointmentSchedulerTest {
 		Appointment expected = new Appointment();
         expected.setServiceList(newServiceList);
 		expected.setContact(basicContact);
-		expected.setAvailability(basicAvailability);
+		expected.setAvailability1(basicAvailability1);
+		expected.setAvailability2(basicAvailability2);
 		expected.setVehicle(basicVehicle);
 
 		String expectedAppointmentId = "0";

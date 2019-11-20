@@ -1,15 +1,16 @@
-package com.bgriffiniv.challenges.nielsensports.appointments;
+package com.bgriffiniv.challenges.nielsensports.appointments.service;
 
 import com.bgriffiniv.challenges.nielsensports.appointments.model.Appointment;
 
 import java.util.List;
 
-public interface IAppointmentScheduler {
+public interface IAppointmentService {
 
 	public void addAppointment(Appointment appointment);
 	public Appointment findAppointment(String appointmentId);
 	public List<Appointment> listAppointments();
-	public int countAppointments();
+
+	public long countAppointments();
 	public void editAppointment(String appointmentId, Appointment appointment);
 	public void removeAppointment(String appointmentId);
 }

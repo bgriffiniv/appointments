@@ -31,8 +31,8 @@ interviewer.
 
 #### Structure
 There are four main components for the scheduler:
-- database and ORM/DAO (business objects)
-- service layer (business logic)
+- database and DTOs
+- service layer
 - REST API
 - security layer
 
@@ -45,13 +45,53 @@ and the business logic/objects.
 The REST API should support the following functions:
 - POST /appointments { ... } (create)
 - GET /appointments/1 (read)
-- PUT /appointments/1 (update)
+- PUT /appointments/1 { ... } (update)
 - DELETE /appointments/1 (delete)
 - GET /appointments (list)
 
-#### Schema
+#### JSON Schema
 
+At the center of the design is the Appointment entity, surrounded by the groups of descriptive 
+properties.
 
+```
+Appointment : {
+  contact : Contact,
+  serviceList : Service[],
+  vehicle : Vehicle,
+  availability1 : String,
+  availability2 : String,
+  notes : String
+},
+Contact : {
+  firstName : String,
+  lastName : String,
+  phone : String,
+  email : String,
+  address1 : String,
+  address2 : String,
+  city : String,
+  state : String,
+  zip : String,
+  contactBy : ["PHONE", "EMAIL"]
+},
+Service : {
+  type : String,
+  description : String,
+  appointmentList : Appointment[]
+},
+Vehicle : {
+  year : String,
+  make : String,
+  model : String,
+  mileage : String
+}
+```
+
+#### SQL Schema
+
+There is a join table `Appointment_Service` with `appointment_id` and `service_id` columns to 
+facilitate the Many-to-Many relationship between `Appointment` and `Service` tables.
 
 ### Considerations
 
