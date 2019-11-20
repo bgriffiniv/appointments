@@ -12,7 +12,7 @@ public class Service {
 
 	@Id
 	@GeneratedValue
-	private String id;
+	private Integer id;
     private String type;
     private String description;
 
@@ -22,18 +22,18 @@ public class Service {
 	public Service() {
 	}
 
-	public Service(String id, String type, String description, List<Appointment> appointmentList) {
+	public Service(Integer id, String type, String description, List<Appointment> appointmentList) {
 		this.id = id;
 		this.type = type;
 		this.description = description;
 		this.appointmentList = appointmentList;
 	}
 
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

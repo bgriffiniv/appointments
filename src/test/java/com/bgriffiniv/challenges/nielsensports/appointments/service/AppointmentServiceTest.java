@@ -76,6 +76,7 @@ class AppointmentServiceTest {
 
 		try {
 			instance.addAppointment(appointment);
+			System.out.println(instance.countAppointments());
 		} catch (Exception e) {
 			// do nothing
 		}
@@ -109,7 +110,7 @@ class AppointmentServiceTest {
 		expected.setVehicle(basicVehicle);
 
 		instance.addAppointment(expected);
-		String expectedAppointmentId = "1";
+		Integer expectedAppointmentId = 1;
 		expected.setId(expectedAppointmentId);
 
 		Appointment actual = instance.findAppointment(expectedAppointmentId);
@@ -126,7 +127,7 @@ class AppointmentServiceTest {
 		expected.setAvailability2(basicAvailability2);
 		expected.setVehicle(basicVehicle);
 
-		String expectedAppointmentId = "0";
+		Integer expectedAppointmentId = 0;
 		expected.setId(expectedAppointmentId);
 
 		Appointment actual = instance.findAppointment(expectedAppointmentId);
@@ -135,7 +136,7 @@ class AppointmentServiceTest {
 
 	@Test
 	void findAppointment_notFound_appointmentShouldBeNull() {
-		String expectedAppointmentId = "1";
+		Integer expectedAppointmentId = 1;
 		Appointment appointment = instance.findAppointment(expectedAppointmentId);
 
 		assertEquals(null, appointment);
@@ -152,7 +153,7 @@ class AppointmentServiceTest {
 		expected.setAvailability2(basicAvailability2);
 		expected.setVehicle(basicVehicle);
 
-		String expectedAppointmentId = "0";
+		Integer expectedAppointmentId = 0;
 		expected.setId(expectedAppointmentId);
 
 		assertEquals(1, appointmentList.size());
@@ -168,7 +169,7 @@ class AppointmentServiceTest {
 
 	@Test
 	void editAppointment_notFound_doNothing() {
-		instance.editAppointment("1", null);
+		instance.editAppointment(1, null);
 
 		Appointment expected = new Appointment();
         expected.setServiceList(basicServiceList);
@@ -177,7 +178,7 @@ class AppointmentServiceTest {
 		expected.setAvailability2(basicAvailability2);
 		expected.setVehicle(basicVehicle);
 
-		String expectedAppointmentId = "0";
+		Integer expectedAppointmentId = 0;
 		expected.setId(expectedAppointmentId);
 
 		Appointment actual = instance.findAppointment(expectedAppointmentId);
@@ -186,7 +187,7 @@ class AppointmentServiceTest {
 	}
 	@Test
 	void editAppointment_notValid_doNothing() {
-		instance.editAppointment("0", null);
+		instance.editAppointment(0, null);
 
 		Appointment expected = new Appointment();
         expected.setServiceList(basicServiceList);
@@ -195,7 +196,7 @@ class AppointmentServiceTest {
 		expected.setAvailability2(basicAvailability2);
 		expected.setVehicle(basicVehicle);
 
-		String expectedAppointmentId = "0";
+		Integer expectedAppointmentId = 0;
 		expected.setId(expectedAppointmentId);
 
 		Appointment actual = instance.findAppointment(expectedAppointmentId);
@@ -217,7 +218,7 @@ class AppointmentServiceTest {
 		expected.setAvailability2(basicAvailability2);
 		expected.setVehicle(basicVehicle);
 
-		String expectedAppointmentId = "0";
+		Integer expectedAppointmentId = 0;
 		instance.editAppointment(expectedAppointmentId, expected);
 		expected.setId(expectedAppointmentId);
 
@@ -227,12 +228,12 @@ class AppointmentServiceTest {
 	}
 	@Test
 	void removeAppointment_happyPath_sizeShouldBeZero() {
-		instance.removeAppointment("0");
+		instance.removeAppointment(0);
 		assertEquals(0, instance.countAppointments());
 	}
 	@Test
 	void removeAppointment_notFund_sizeShouldBeOne() {
-		instance.removeAppointment("1"); // no instance with that ID
+		instance.removeAppointment(1); // no instance with that ID
 		assertEquals(1, instance.countAppointments());
 	}
 }

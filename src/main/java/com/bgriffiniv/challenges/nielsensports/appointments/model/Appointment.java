@@ -9,7 +9,7 @@ public class Appointment {
 
 	@Id
 	@GeneratedValue
-	private String id;
+	private Integer id;
 
 	@ManyToOne
 	@JoinColumn(name = "contact_id")
@@ -34,7 +34,7 @@ public class Appointment {
 	public Appointment() {
 	}
 
-	public Appointment(String id, Contact contact, Vehicle vehicle, List<Service> serviceList, String availability1, String availability2, String notes) {
+	public Appointment(Integer id, Contact contact, Vehicle vehicle, List<Service> serviceList, String availability1, String availability2, String notes) {
 		this.id = id;
 		this.contact = contact;
 		this.vehicle = vehicle;
@@ -44,11 +44,11 @@ public class Appointment {
 		this.notes = notes;
 	}
 
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

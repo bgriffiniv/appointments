@@ -4,28 +4,19 @@
     <list default="true" id="7d0644b4-4f54-4dd0-854f-15142b3e6622" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/gradle_wrapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/gradle_wrapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/AppointmentScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/service/AppointmentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/AppointmentsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/AppointmentsApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/IAppointmentScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/service/IAppointmentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/controller/AppointmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/controller/AppointmentControllerV1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/data/IAppointmentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/data/IAppointmentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/data/IAvailabilityRepository.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/data/IContactRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/data/IContactRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/data/IServiceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/data/IServiceRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/data/IVehicleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/data/IVehicleRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/Appointment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/Availability.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/Contact.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/Service.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/Vehicle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/schema.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/bgriffiniv/challenges/nielsensports/appointments/model/AppointmentSchedulerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/bgriffiniv/challenges/nielsensports/appointments/service/AppointmentServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/service/AppointmentService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/service/IAppointmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/service/IAppointmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/bgriffiniv/challenges/nielsensports/appointments/service/AppointmentServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/bgriffiniv/challenges/nielsensports/appointments/service/AppointmentServiceTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -307,7 +298,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573845721619</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Work on unit tests">
+      <created>1574291604141</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1574291604141</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -343,7 +341,8 @@
     <MESSAGE value="Add unit tests" />
     <MESSAGE value="Simplify tests with global data&#10;&#10;- comply with non-null field rules" />
     <MESSAGE value="Add repositories and service" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add repositories and service" />
+    <MESSAGE value="Work on unit tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Work on unit tests" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

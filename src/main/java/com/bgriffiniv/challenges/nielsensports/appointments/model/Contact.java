@@ -10,7 +10,7 @@ public class Contact {
 
 	@Id
 	@GeneratedValue
-	private String id;
+	private Integer id;
 	private String firstName;
 	private String lastName;
 	private String phone;
@@ -25,7 +25,7 @@ public class Contact {
 	public Contact() {
 	}
 
-	public Contact(String id, String firstName, String lastName, String phone, String email, String address1, String address2, String city, String state, String zip, String contactBy) {
+	public Contact(Integer id, String firstName, String lastName, String phone, String email, String address1, String address2, String city, String state, String zip, String contactBy) {
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -39,11 +39,11 @@ public class Contact {
 		this.contactBy = contactBy;
 	}
 
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

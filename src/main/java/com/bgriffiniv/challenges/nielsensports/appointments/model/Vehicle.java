@@ -10,7 +10,7 @@ public class Vehicle {
 
 	@Id
 	@GeneratedValue
-	private String id;
+	private Integer id;
 	private String year;
 	private String make;
 	private String model;
@@ -19,7 +19,7 @@ public class Vehicle {
 	public Vehicle() {
 	}
 
-	public Vehicle(String id, String year, String make, String model, String mileage) {
+	public Vehicle(Integer id, String year, String make, String model, String mileage) {
 		this.id = id;
 		this.year = year;
 		this.make = make;
@@ -27,11 +27,11 @@ public class Vehicle {
 		this.mileage = mileage;
 	}
 
-	public String getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 

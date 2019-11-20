@@ -7,10 +7,13 @@ import java.util.List;
 public interface IAppointmentService {
 
 	public void addAppointment(Appointment appointment);
-	public Appointment findAppointment(String appointmentId);
+
+	public Appointment findAppointment(Integer appointmentId);
 	public List<Appointment> listAppointments();
 
 	public long countAppointments();
-	public void editAppointment(String appointmentId, Appointment appointment);
-	public void removeAppointment(String appointmentId);
+
+	public void editAppointment(Integer appointmentId, Appointment appointment);
+
+	public void removeAppointment(Integer appointmentId);
 }
