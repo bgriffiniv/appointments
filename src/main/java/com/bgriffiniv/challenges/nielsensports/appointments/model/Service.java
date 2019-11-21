@@ -3,8 +3,6 @@ package com.bgriffiniv.challenges.nielsensports.appointments.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -16,17 +14,13 @@ public class Service {
     private String type;
     private String description;
 
-	@ManyToMany(mappedBy = "serviceList")
-    private List<Appointment> appointmentList;
-
 	public Service() {
 	}
 
-	public Service(Integer id, String type, String description, List<Appointment> appointmentList) {
+	public Service(Integer id, String type, String description) {
 		this.id = id;
 		this.type = type;
 		this.description = description;
-		this.appointmentList = appointmentList;
 	}
 
 	public Integer getId() {
@@ -53,14 +47,6 @@ public class Service {
 		this.description = description;
 	}
 
-	public List<Appointment> getAppointmentList() {
-		return appointmentList;
-	}
-
-	public void setAppointmentList(List<Appointment> appointmentList) {
-		this.appointmentList = appointmentList;
-	}
-
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
@@ -68,13 +54,12 @@ public class Service {
 		Service service = (Service) o;
 		return getId().equals(service.getId()) &&
 				getType().equals(service.getType()) &&
-				Objects.equals(getDescription(), service.getDescription()) &&
-				Objects.equals(getAppointmentList(), service.getAppointmentList());
+				Objects.equals(getDescription(), service.getDescription());
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(getId(), getType(), getDescription(), getAppointmentList());
+		return Objects.hash(getId(), getType(), getDescription());
 	}
 
 	enum ServiceType {

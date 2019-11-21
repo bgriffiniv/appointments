@@ -1,6 +1,7 @@
 package com.bgriffiniv.challenges.nielsensports.appointments.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -11,20 +12,20 @@ public class Appointment {
 	@GeneratedValue
 	private Integer id;
 
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "contact_id")
 	private Contact contact;
 
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.MERGE)
 	@JoinColumn(name = "vehicle_id")
 	private Vehicle vehicle;
 
-	@ManyToMany(cascade = CascadeType.ALL)
+	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
 	@JoinTable(name = "appointment_service",
 			joinColumns = @JoinColumn(name = "appointment_id", referencedColumnName = "id"),
 			inverseJoinColumns = @JoinColumn(name = "service_id", referencedColumnName = "id")
 	)
-	private List<Service> serviceList;
+	private List<Service> serviceList = new ArrayList<>();
 
 	private String availability1;
 	private String availability2;
@@ -38,7 +39,7 @@ public class Appointment {
 		this.id = id;
 		this.contact = contact;
 		this.vehicle = vehicle;
-		this.serviceList = serviceList;
+		this.serviceList.addAll(serviceList);
 		this.availability1 = availability1;
 		this.availability2 = availability2;
 		this.notes = notes;
@@ -69,11 +70,11 @@ public class Appointment {
 	}
 
     public List<Service> getServiceList() {
-        return serviceList;
+		return new ArrayList<>(serviceList);
     }
 
     public void setServiceList(List<Service> serviceList) {
-        this.serviceList = serviceList;
+		this.serviceList.addAll(serviceList);
 	}
 
 	public String getAvailability1() {

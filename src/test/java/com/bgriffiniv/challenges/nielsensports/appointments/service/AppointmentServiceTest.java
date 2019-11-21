@@ -37,11 +37,13 @@ class AppointmentServiceTest {
 	private AppointmentService instance;
 	private Contact basicContact;
 	private Vehicle basicVehicle;
+	private int appointmentId;
 
 	@BeforeEach
 	void setUp() {
         Service service = new Service();
-        service.setDescription("TIRE_CHANGE");
+		service.setDescription("Simple tire change (one or more)");
+		service.setType("TIRE_CHANGE");
 
         basicServiceList = new ArrayList<>();
         basicServiceList.add(service);
@@ -55,6 +57,7 @@ class AppointmentServiceTest {
 		basicContact.setCity("city");
 		basicContact.setState("ST");
 		basicContact.setZip("12345");
+		basicContact.setPhone("55555555555");
 		basicContact.setEmail("email@example.com");
 		basicContact.setContactBy("PHONE");
 		basicContact.setFirstName("First");
@@ -76,7 +79,7 @@ class AppointmentServiceTest {
 
 		try {
 			instance.addAppointment(appointment);
-			System.out.println(instance.countAppointments());
+			appointmentId = appointment.getId();
 		} catch (Exception e) {
 			// do nothing
 		}
@@ -98,7 +101,8 @@ class AppointmentServiceTest {
 	@Test
 	void addAppointment_happyPath_sizeShouldBeTwo() {
 		Service service = new Service();
-        service.setDescription("TIRE_ROTATION");
+		service.setType("TIRE_ROTATION");
+		service.setDescription("Simple tire rotation (2 or more)");
         List<Service> serviceList = new ArrayList<>();
         serviceList.add(service);
 
@@ -108,10 +112,11 @@ class AppointmentServiceTest {
 		expected.setAvailability1(basicAvailability1);
 		expected.setAvailability2(basicAvailability2);
 		expected.setVehicle(basicVehicle);
+		expected.setNotes(basicNotes);
 
 		instance.addAppointment(expected);
-		Integer expectedAppointmentId = 1;
-		expected.setId(expectedAppointmentId);
+		Integer expectedAppointmentId = expected.getId();
+		//expected.setId(expectedAppointmentId);
 
 		Appointment actual = instance.findAppointment(expectedAppointmentId);
 		assertEquals(2, instance.countAppointments());
@@ -126,11 +131,11 @@ class AppointmentServiceTest {
 		expected.setAvailability1(basicAvailability1);
 		expected.setAvailability2(basicAvailability2);
 		expected.setVehicle(basicVehicle);
+		expected.setNotes(basicNotes);
 
-		Integer expectedAppointmentId = 0;
-		expected.setId(expectedAppointmentId);
+		expected.setId(appointmentId);
 
-		Appointment actual = instance.findAppointment(expectedAppointmentId);
+		Appointment actual = instance.findAppointment(appointmentId);
 		assertEquals(expected, actual);
 	}
 
@@ -152,9 +157,9 @@ class AppointmentServiceTest {
 		expected.setAvailability1(basicAvailability1);
 		expected.setAvailability2(basicAvailability2);
 		expected.setVehicle(basicVehicle);
+		expected.setNotes(basicNotes);
 
-		Integer expectedAppointmentId = 0;
-		expected.setId(expectedAppointmentId);
+		expected.setId(appointmentId);
 
 		assertEquals(1, appointmentList.size());
 		assertTrue(appointmentList.contains(expected));
@@ -171,23 +176,13 @@ class AppointmentServiceTest {
 	void editAppointment_notFound_doNothing() {
 		instance.editAppointment(1, null);
 
-		Appointment expected = new Appointment();
-        expected.setServiceList(basicServiceList);
-		expected.setContact(basicContact);
-		expected.setAvailability1(basicAvailability1);
-		expected.setAvailability2(basicAvailability2);
-		expected.setVehicle(basicVehicle);
-
-		Integer expectedAppointmentId = 0;
-		expected.setId(expectedAppointmentId);
-
-		Appointment actual = instance.findAppointment(expectedAppointmentId);
+		Appointment actual = instance.findAppointment(1);
 		assertEquals(1, instance.countAppointments());
-		assertEquals(expected, actual);
+		assertEquals(null, actual);
 	}
 	@Test
 	void editAppointment_notValid_doNothing() {
-		instance.editAppointment(0, null);
+		instance.editAppointment(appointmentId, null);
 
 		Appointment expected = new Appointment();
         expected.setServiceList(basicServiceList);
@@ -195,18 +190,19 @@ class AppointmentServiceTest {
 		expected.setAvailability1(basicAvailability1);
 		expected.setAvailability2(basicAvailability2);
 		expected.setVehicle(basicVehicle);
+		expected.setNotes(basicNotes);
 
-		Integer expectedAppointmentId = 0;
-		expected.setId(expectedAppointmentId);
+		expected.setId(appointmentId);
 
-		Appointment actual = instance.findAppointment(expectedAppointmentId);
+		Appointment actual = instance.findAppointment(appointmentId);
 		assertEquals(1, instance.countAppointments());
 		assertEquals(expected, actual);
 	}
 	@Test
 	void editAppointment_happyPath_appointmentShouldHaveWiperFluidService() {
         Service service = new Service();
-        service.setDescription("WIPER_FLUID");
+		service.setType("WIPER_FLUID");
+		service.setDescription("Wiper fluid refill");
         List<Service> newServiceList = new ArrayList<>();
         newServiceList.addAll(basicServiceList);
         newServiceList.add(service);
@@ -217,18 +213,22 @@ class AppointmentServiceTest {
 		expected.setAvailability1(basicAvailability1);
 		expected.setAvailability2(basicAvailability2);
 		expected.setVehicle(basicVehicle);
+		expected.setNotes(basicNotes);
 
-		Integer expectedAppointmentId = 0;
-		instance.editAppointment(expectedAppointmentId, expected);
-		expected.setId(expectedAppointmentId);
+		instance.editAppointment(appointmentId, expected);
+		expected.setId(appointmentId);
 
-		Appointment actual = instance.findAppointment(expectedAppointmentId);
+		Appointment actual = instance.findAppointment(appointmentId);
+		expected.getServiceList().get(1).setId(actual.getServiceList().get(1).getId());
+		expected.getVehicle().setId(actual.getVehicle().getId());
+		expected.getContact().setId(actual.getContact().getId());
+
 		assertEquals(1, instance.countAppointments());
 		assertEquals(expected, actual);
 	}
 	@Test
 	void removeAppointment_happyPath_sizeShouldBeZero() {
-		instance.removeAppointment(0);
+		instance.removeAppointment(instance.listAppointments().get(0).getId());
 		assertEquals(0, instance.countAppointments());
 	}
 	@Test
