@@ -5,6 +5,7 @@ import com.bgriffiniv.challenges.nielsensports.appointments.model.Appointment;
 import com.bgriffiniv.challenges.nielsensports.appointments.model.Contact;
 import com.bgriffiniv.challenges.nielsensports.appointments.model.Service;
 import com.bgriffiniv.challenges.nielsensports.appointments.model.Vehicle;
+import javassist.NotFoundException;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -18,8 +19,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -40,7 +40,7 @@ class AppointmentServiceTest {
 	private int appointmentId;
 
 	@BeforeEach
-	void setUp() {
+	void setUp() throws Exception {
         Service service = new Service();
 		service.setDescription("Simple tire change (one or more)");
 		service.setType("TIRE_CHANGE");
@@ -77,16 +77,12 @@ class AppointmentServiceTest {
 		appointment.setVehicle(basicVehicle);
 		appointment.setNotes(basicNotes);
 
-		try {
-			instance.addAppointment(appointment);
-			appointmentId = appointment.getId();
-		} catch (Exception e) {
-			// do nothing
-		}
+		instance.addAppointment(appointment);
+		appointmentId = appointment.getId();
 	}
 
 	@AfterEach
-	void tearDown() {
+	void tearDown() throws Exception {
 		for (Appointment appointment: instance.listAppointments()) {
 			instance.removeAppointment(appointment.getId());
 		}
@@ -94,12 +90,14 @@ class AppointmentServiceTest {
 
 	@Test
 	void addAppointment_null_sizeShouldBeOne() {
-		instance.addAppointment(null);
+		assertThrows(IllegalArgumentException.class, () -> {
+			int id = instance.addAppointment(null);
+		});
 		assertEquals(1, instance.countAppointments());
 	}
 
 	@Test
-	void addAppointment_happyPath_sizeShouldBeTwo() {
+	void addAppointment_happyPath_sizeShouldBeTwo() throws Exception {
 		Service service = new Service();
 		service.setType("TIRE_ROTATION");
 		service.setDescription("Simple tire rotation (2 or more)");
@@ -114,17 +112,15 @@ class AppointmentServiceTest {
 		expected.setVehicle(basicVehicle);
 		expected.setNotes(basicNotes);
 
-		instance.addAppointment(expected);
-		Integer expectedAppointmentId = expected.getId();
-		//expected.setId(expectedAppointmentId);
+		int id = instance.addAppointment(expected);
 
-		Appointment actual = instance.findAppointment(expectedAppointmentId);
+		Appointment actual = instance.findAppointment(id);
 		assertEquals(2, instance.countAppointments());
 		assertEquals(expected, actual);
 	}
 
 	@Test
-	void findAppointment_happyPath_appointmentShouldBeExpected() {
+	void findAppointment_happyPath_appointmentShouldBeExpected() throws Exception {
 		Appointment expected = new Appointment();
         expected.setServiceList(basicServiceList);
 		expected.setContact(basicContact);
@@ -140,15 +136,15 @@ class AppointmentServiceTest {
 	}
 
 	@Test
-	void findAppointment_notFound_appointmentShouldBeNull() {
+	void findAppointment_notFound_appointmentShouldBeNull() throws Exception {
 		Integer expectedAppointmentId = 1;
-		Appointment appointment = instance.findAppointment(expectedAppointmentId);
-
-		assertEquals(null, appointment);
+		assertThrows(NotFoundException.class, () -> {
+			Appointment appointment = instance.findAppointment(expectedAppointmentId);
+		});
 	}
 
 	@Test
-	void listAppointments_happyPath_sizeShouldBeOne() {
+	void listAppointments_happyPath_sizeShouldBeOne() throws Exception {
 		List<Appointment> appointmentList = instance.listAppointments();
 
 		Appointment expected = new Appointment();
@@ -166,24 +162,27 @@ class AppointmentServiceTest {
 	}
 
 	@Test
-	void countAppointments_happyPath_countShouldEqualSize() {
+	void countAppointments_happyPath_countShouldEqualSize() throws Exception {
 		List<Appointment> appointmentList = instance.listAppointments();
 
 		assertEquals(appointmentList.size(), instance.countAppointments());
 	}
 
 	@Test
-	void editAppointment_notFound_doNothing() {
-		instance.editAppointment(1, null);
-
-		Appointment actual = instance.findAppointment(1);
+	void editAppointment_notFound_doNothing() throws Exception {
+		assertThrows(NotFoundException.class, () -> {
+			instance.editAppointment(1, null);
+		});
+		assertThrows(NotFoundException.class, () -> {
+			Appointment actual = instance.findAppointment(1);
+		});
 		assertEquals(1, instance.countAppointments());
-		assertEquals(null, actual);
 	}
 	@Test
-	void editAppointment_notValid_doNothing() {
-		instance.editAppointment(appointmentId, null);
-
+	void editAppointment_notValid_doNothing() throws Exception {
+		assertThrows(IllegalArgumentException.class, () -> {
+			instance.editAppointment(appointmentId, null);
+		});
 		Appointment expected = new Appointment();
         expected.setServiceList(basicServiceList);
 		expected.setContact(basicContact);
@@ -199,7 +198,7 @@ class AppointmentServiceTest {
 		assertEquals(expected, actual);
 	}
 	@Test
-	void editAppointment_happyPath_appointmentShouldHaveWiperFluidService() {
+	void editAppointment_happyPath_appointmentShouldHaveWiperFluidService() throws Exception {
         Service service = new Service();
 		service.setType("WIPER_FLUID");
 		service.setDescription("Wiper fluid refill");
@@ -227,13 +226,15 @@ class AppointmentServiceTest {
 		assertEquals(expected, actual);
 	}
 	@Test
-	void removeAppointment_happyPath_sizeShouldBeZero() {
+	void removeAppointment_happyPath_sizeShouldBeZero() throws Exception {
 		instance.removeAppointment(instance.listAppointments().get(0).getId());
 		assertEquals(0, instance.countAppointments());
 	}
 	@Test
 	void removeAppointment_notFund_sizeShouldBeOne() {
-		instance.removeAppointment(1); // no instance with that ID
+		assertThrows(NotFoundException.class, () -> {
+			instance.removeAppointment(1); // no instance with that ID
+		});
 		assertEquals(1, instance.countAppointments());
 	}
 }

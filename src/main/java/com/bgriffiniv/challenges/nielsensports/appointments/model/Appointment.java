@@ -106,7 +106,7 @@ public class Appointment {
 		if (this == o) return true;
 		if (!(o instanceof Appointment)) return false;
 		Appointment that = (Appointment) o;
-		return getId().equals(that.getId()) &&
+		return Objects.equals(getId(), that.getId()) &&
 				getContact().equals(that.getContact()) &&
 				getVehicle().equals(that.getVehicle()) &&
 				getServiceList().equals(that.getServiceList()) &&

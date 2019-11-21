@@ -72,7 +72,7 @@ public class Vehicle {
 		if (this == o) return true;
 		if (!(o instanceof Vehicle)) return false;
 		Vehicle vehicle = (Vehicle) o;
-		return getId().equals(vehicle.getId()) &&
+		return Objects.equals(getId(), vehicle.getId()) &&
 				getYear().equals(vehicle.getYear()) &&
 				getMake().equals(vehicle.getMake()) &&
 				getModel().equals(vehicle.getModel()) &&

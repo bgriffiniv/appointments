@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7d0644b4-4f54-4dd0-854f-15142b3e6622" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/data/demo.mv.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/demo.trace.db" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/service/AppointmentService.java" afterDir="false" />
+    <list default="true" id="7d0644b4-4f54-4dd0-854f-15142b3e6622" name="Default Changelist" comment="- fix db/repo issues&#10;- get tests to pass">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/config/SecurityConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/handler/AppointmentControllerAdvice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/demo.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/demo.mv.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/controller/AppointmentControllerV1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/controller/AppointmentControllerV1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/Appointment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/Contact.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/Service.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/Vehicle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/service/AppointmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/service/AppointmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/service/IAppointmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/service/IAppointmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/demo" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/bgriffiniv/challenges/nielsensports/appointments/service/AppointmentServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/bgriffiniv/challenges/nielsensports/appointments/service/AppointmentServiceTest.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,6 +27,9 @@
   </component>
   <component name="CodeStyleSettingsInfer">
     <option name="done" value="true" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="testRunner" value="GRADLE" />
@@ -70,8 +79,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -100,10 +109,11 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.bgriffiniv.challenges.nielsensports.appointments.handler" />
       <recent name="com.bgriffiniv.challenges.nielsensports.appointments.scheduler" />
     </key>
   </component>
@@ -119,7 +129,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.AppointmentServiceTest">
+  <component name="RunManager" selected="Application.AppointmentsApplication">
     <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
       <option name="MAIN_CLASS_NAME" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -140,31 +150,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
+    <configuration name="AppointmentsApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.bgriffiniv.challenges.nielsensports.appointments.AppointmentsApplication" />
+      <module name="appointments.main" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AppointmentSchedulerTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;com.bgriffiniv.challenges.nielsensports.appointments.scheduler.AppointmentSchedulerTest&quot;" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":cleanTest" />
-            <option value=":test" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
-      <method v="2" />
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="AppointmentServiceTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -245,10 +243,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.AppointmentServiceTest" />
+        <item itemvalue="Application.AppointmentsApplication" />
         <item itemvalue="Gradle.AppointmentServiceTest.editAppointment_notFound_doNothing" />
         <item itemvalue="Gradle.AppointmentServiceTest.removeAppointment_happyPath_sizeShouldBeZero" />
         <item itemvalue="Application.AppointmentService" />
-        <item itemvalue="Gradle.AppointmentSchedulerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -312,7 +310,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574292416952</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="- fix db/repo issues&#10;- get tests to pass">
+      <created>1574359044130</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1574359044130</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -350,7 +355,8 @@
     <MESSAGE value="Simplify tests with global data&#10;&#10;- comply with non-null field rules" />
     <MESSAGE value="Add repositories and service" />
     <MESSAGE value="Work on unit tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Work on unit tests" />
+    <MESSAGE value="- fix db/repo issues&#10;- get tests to pass" />
+    <option name="LAST_COMMIT_MESSAGE" value="- fix db/repo issues&#10;- get tests to pass" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />

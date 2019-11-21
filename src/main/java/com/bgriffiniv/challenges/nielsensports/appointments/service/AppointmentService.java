@@ -5,6 +5,7 @@ import com.bgriffiniv.challenges.nielsensports.appointments.data.IContactReposit
 import com.bgriffiniv.challenges.nielsensports.appointments.data.IServiceRepository;
 import com.bgriffiniv.challenges.nielsensports.appointments.data.IVehicleRepository;
 import com.bgriffiniv.challenges.nielsensports.appointments.model.Appointment;
+import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,16 +26,17 @@ public class AppointmentService implements IAppointmentService {
 	private IVehicleRepository vehicleRepository;
 
 	@Override
-	public void addAppointment(Appointment appointment) {
+	public int addAppointment(Appointment appointment) throws IllegalArgumentException {
 		// persist
 		if (!isValidAppointment(appointment)) {
-			//throw new Exception(String.format("Failed to add invalid Appointment"));
-			return;
+			throw new IllegalArgumentException(String.format("Failed to add invalid Appointment"));
 		}
 		contactRepository.save(appointment.getContact());
 		serviceRepository.saveAll(appointment.getServiceList());
 		vehicleRepository.save(appointment.getVehicle());
 		appointmentRepository.save(appointment);
+
+		return appointment.getId();
 	}
 
 	private boolean isValidAppointment(Appointment appointment) {
@@ -45,10 +47,10 @@ public class AppointmentService implements IAppointmentService {
 	}
 
 	@Override
-	public Appointment findAppointment(Integer appointmentId) {
+	public Appointment findAppointment(Integer appointmentId) throws NotFoundException {
 		// get from db
 		if (!appointmentRepository.existsById(appointmentId)) {
-			return null;
+			throw new NotFoundException(String.format("Failed to find Appointment with ID : %s", appointmentId));
 		}
 
 		return appointmentRepository.findById(appointmentId).get();
@@ -69,28 +71,28 @@ public class AppointmentService implements IAppointmentService {
 	}
 
 	@Override
-	public void editAppointment(Integer appointmentId, Appointment appointment) {
+	public int editAppointment(Integer appointmentId, Appointment appointment) throws NotFoundException, IllegalArgumentException {
 		if (!appointmentRepository.existsById(appointmentId)) {
-			// throw new Exception(String.format("Appointment ID not found: %s", appointmentId));
-			return;
+			throw new NotFoundException(String.format("Failed to edit Appointment with ID : %s", appointmentId));
 		}
 		if (!isValidAppointment(appointment)) {
-			//throw new Exception(String.format("Failed to add invalid Appointment"));
-			return;
+			throw new IllegalArgumentException(String.format("Failed to edit Appointment with ID : %s", appointmentId));
 		}
 		// persist
 		Appointment old = appointmentRepository.findById(appointmentId).get();
 		appointment.setId(old.getId());
 		appointmentRepository.save(appointment);
+		return old.getId();
 	}
 
 	@Override
-	public void removeAppointment(Integer appointmentId) {
+	public int removeAppointment(Integer appointmentId) throws NotFoundException {
 		// persist
-		if (findAppointment(appointmentId) == null) {
-			return;
+		if (!appointmentRepository.existsById(appointmentId)) {
+			throw new NotFoundException(String.format("Failed to remove Appointment with ID : %s", appointmentId));
 		}
 
 		appointmentRepository.deleteById(appointmentId);
+		return appointmentId;
 	}
 }

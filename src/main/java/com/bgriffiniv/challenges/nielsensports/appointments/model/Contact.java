@@ -132,7 +132,7 @@ public class Contact {
 		if (this == o) return true;
 		if (!(o instanceof Contact)) return false;
 		Contact contact = (Contact) o;
-		return getId().equals(contact.getId()) &&
+		return Objects.equals(getId(), contact.getId()) &&
 				getFirstName().equals(contact.getFirstName()) &&
 				getLastName().equals(contact.getLastName()) &&
 				getPhone().equals(contact.getPhone()) &&

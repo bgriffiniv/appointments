@@ -52,7 +52,7 @@ public class Service {
 		if (this == o) return true;
 		if (!(o instanceof Service)) return false;
 		Service service = (Service) o;
-		return getId().equals(service.getId()) &&
+		return Objects.equals(getId(), service.getId()) &&
 				getType().equals(service.getType()) &&
 				Objects.equals(getDescription(), service.getDescription());
 	}
