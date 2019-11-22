@@ -29,9 +29,9 @@ interviewer.
 
 ### Structure
 There are four main components for the scheduler:
-- database and DTOs (H2)
-- service layer (Spring Boot w/ Data)
 - security layer (Spring Security)
+- service layer (Spring Boot w/ Data)
+- database and DTOs (H2)
 - container layer (Docker)
 
 ### Framework & Tools
@@ -138,6 +138,6 @@ Send requests to `localhost:8000/`
 ## Caveats
 
 There are three main features missing from this implementation:
-1. Strong security, both around the app itself and the database console.
-2. CD/CI, automated tests, logging, monitoring, and other DevOps aspects.
-3. The insertion of appointments into the service at random intervals, as indicated in the challenge instructions.
+- strong security, both around the app itself and the database console
+- CD/CI, automated tests, logging, monitoring, and other DevOps aspects
+- random insertion of appointments into the service, as indicated in the challenge instructions
