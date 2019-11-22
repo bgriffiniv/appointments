@@ -1,4 +1,4 @@
-package com.bgriffiniv.challenges.nielsensports.appointments.config;
+package com.bgriffiniv.challenges.appointments.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

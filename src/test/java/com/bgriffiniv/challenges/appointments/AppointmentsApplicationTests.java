@@ -1,4 +1,4 @@
-package com.bgriffiniv.challenges.nielsensports.appointments;
+package com.bgriffiniv.challenges.appointments;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

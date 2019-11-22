@@ -20,7 +20,7 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 targetCompatibility = '1.8'
 description = """
-Appointments REST API for Nielsen Sports Car Service Center
+Appointments REST API for a Car Service Center
 ------------------------------------------
 Project version: ${version}
 Gradle version: ${gradle.gradleVersion}

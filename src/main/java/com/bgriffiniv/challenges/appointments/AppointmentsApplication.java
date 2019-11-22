@@ -1,4 +1,4 @@
-package com.bgriffiniv.challenges.nielsensports.appointments;
+package com.bgriffiniv.challenges.appointments;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

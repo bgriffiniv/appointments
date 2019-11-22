@@ -1,4 +1,4 @@
-package com.bgriffiniv.challenges.nielsensports.appointments.model;
+package com.bgriffiniv.challenges.appointments.model;
 
 import javax.persistence.*;
 import java.util.ArrayList;

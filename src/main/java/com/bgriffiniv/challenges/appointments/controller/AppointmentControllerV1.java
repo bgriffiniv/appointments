@@ -1,7 +1,7 @@
-package com.bgriffiniv.challenges.nielsensports.appointments.controller;
+package com.bgriffiniv.challenges.appointments.controller;
 
-import com.bgriffiniv.challenges.nielsensports.appointments.model.Appointment;
-import com.bgriffiniv.challenges.nielsensports.appointments.service.IAppointmentService;
+import com.bgriffiniv.challenges.appointments.model.Appointment;
+import com.bgriffiniv.challenges.appointments.service.IAppointmentService;
 import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +20,7 @@ public class AppointmentControllerV1 {
 
 	@RequestMapping(path = "/", method = GET)
 	public String welcome() {
-        return "Welcome to the Nielsen Sports Car Service Center!";
+		return "Welcome to the Car Service Center!";
     }
 
 	@RequestMapping(path = "/appointments", method = GET)

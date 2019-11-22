@@ -1,10 +1,10 @@
-package com.bgriffiniv.challenges.nielsensports.appointments.service;
+package com.bgriffiniv.challenges.appointments.service;
 
-import com.bgriffiniv.challenges.nielsensports.appointments.data.IAppointmentRepository;
-import com.bgriffiniv.challenges.nielsensports.appointments.data.IContactRepository;
-import com.bgriffiniv.challenges.nielsensports.appointments.data.IServiceRepository;
-import com.bgriffiniv.challenges.nielsensports.appointments.data.IVehicleRepository;
-import com.bgriffiniv.challenges.nielsensports.appointments.model.Appointment;
+import com.bgriffiniv.challenges.appointments.data.IAppointmentRepository;
+import com.bgriffiniv.challenges.appointments.data.IContactRepository;
+import com.bgriffiniv.challenges.appointments.data.IServiceRepository;
+import com.bgriffiniv.challenges.appointments.data.IVehicleRepository;
+import com.bgriffiniv.challenges.appointments.model.Appointment;
 import javassist.NotFoundException;
 import org.apache.logging.log4j.util.Strings;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,8 +1,6 @@
-# Nielsen Sports Coding Challenge
+# Coding Challenge: Car Service Center Application System REST API
 
-## Car Service Center Application System REST API
-
-### Problem:
+## Problem:
 
 > For this test please create a simple application with a REST API that can store and manage appointments for
 a car service center. Appointments should be persisted in a datastore. Please create the data model that you
@@ -27,21 +25,21 @@ Technologies to consider:
 > It is okay to include other libraries/dependencies as necessary, but be prepared to discuss with your
 interviewer.
 
-### Design
+## Design
 
-#### Structure
+### Structure
 There are four main components for the scheduler:
 - database and DTOs
 - service layer
 - REST API
 - security layer
 
-#### Framework & Tools
+### Framework & Tools
 Spring Boot provides us with in-memory database options for building a prototype as well as 
 a REST framework including annotations. The only thing left to build is the actual database 
 and the business logic/objects.
 
-#### API
+### API
 The REST API should support the following functions:
 - POST /appointments { ... } (create)
 - GET /appointments/1 (read)
@@ -49,7 +47,7 @@ The REST API should support the following functions:
 - DELETE /appointments/1 (delete)
 - GET /appointments (list)
 
-#### JSON Schema
+### JSON Schema
 
 At the center of the design is the Appointment entity, surrounded by the groups of descriptive 
 properties.
@@ -88,12 +86,12 @@ Vehicle : {
 }
 ```
 
-#### SQL Schema
+### SQL Schema
 
 There is a join table `Appointment_Service` with `appointment_id` and `service_id` columns to 
 facilitate the Many-to-Many relationship between `Appointment` and `Service` tables.
 
-### Considerations
+## Considerations
 
 **Language:** Java\
 **Build:** Gradle\

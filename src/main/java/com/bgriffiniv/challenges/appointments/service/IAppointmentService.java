@@ -1,6 +1,6 @@
-package com.bgriffiniv.challenges.nielsensports.appointments.service;
+package com.bgriffiniv.challenges.appointments.service;
 
-import com.bgriffiniv.challenges.nielsensports.appointments.model.Appointment;
+import com.bgriffiniv.challenges.appointments.model.Appointment;
 import javassist.NotFoundException;
 
 import java.util.List;

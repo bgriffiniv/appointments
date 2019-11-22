@@ -1,6 +1,6 @@
-package com.bgriffiniv.challenges.nielsensports.appointments.data;
+package com.bgriffiniv.challenges.appointments.data;
 
-import com.bgriffiniv.challenges.nielsensports.appointments.model.Appointment;
+import com.bgriffiniv.challenges.appointments.model.Appointment;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.stereotype.Repository;

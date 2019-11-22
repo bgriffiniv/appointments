@@ -1,4 +1,4 @@
-package com.bgriffiniv.challenges.nielsensports.appointments.handler;
+package com.bgriffiniv.challenges.appointments.handler;
 
 import javassist.NotFoundException;
 import org.springframework.http.HttpStatus;

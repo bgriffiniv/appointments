@@ -1,10 +1,10 @@
-package com.bgriffiniv.challenges.nielsensports.appointments.service;
+package com.bgriffiniv.challenges.appointments.service;
 
-import com.bgriffiniv.challenges.nielsensports.appointments.data.IAppointmentRepository;
-import com.bgriffiniv.challenges.nielsensports.appointments.model.Appointment;
-import com.bgriffiniv.challenges.nielsensports.appointments.model.Contact;
-import com.bgriffiniv.challenges.nielsensports.appointments.model.Service;
-import com.bgriffiniv.challenges.nielsensports.appointments.model.Vehicle;
+import com.bgriffiniv.challenges.appointments.data.IAppointmentRepository;
+import com.bgriffiniv.challenges.appointments.model.Appointment;
+import com.bgriffiniv.challenges.appointments.model.Contact;
+import com.bgriffiniv.challenges.appointments.model.Service;
+import com.bgriffiniv.challenges.appointments.model.Vehicle;
 import javassist.NotFoundException;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
