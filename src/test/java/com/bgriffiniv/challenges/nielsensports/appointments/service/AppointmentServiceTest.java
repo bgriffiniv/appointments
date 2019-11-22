@@ -237,4 +237,6 @@ class AppointmentServiceTest {
 		});
 		assertEquals(1, instance.countAppointments());
 	}
+
+
 }

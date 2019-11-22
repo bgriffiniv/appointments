@@ -31,18 +31,20 @@ public class Appointment {
 	private String availability2;
 
 	private String notes;
+	private float price;
 
 	public Appointment() {
 	}
 
-	public Appointment(Integer id, Contact contact, Vehicle vehicle, List<Service> serviceList, String availability1, String availability2, String notes) {
+	public Appointment(Integer id, Contact contact, Vehicle vehicle, List<Service> serviceList, String availability1, String availability2, String notes, float price) {
 		this.id = id;
 		this.contact = contact;
 		this.vehicle = vehicle;
-		this.serviceList.addAll(serviceList);
+		this.serviceList = serviceList;
 		this.availability1 = availability1;
 		this.availability2 = availability2;
 		this.notes = notes;
+		this.price = price;
 	}
 
 	public Integer getId() {
@@ -101,12 +103,21 @@ public class Appointment {
 		this.notes = notes;
 	}
 
+	public float getPrice() {
+		return price;
+	}
+
+	public void setPrice(float price) {
+		this.price = price;
+	}
+
 	@Override
 	public boolean equals(Object o) {
 		if (this == o) return true;
 		if (!(o instanceof Appointment)) return false;
 		Appointment that = (Appointment) o;
-		return Objects.equals(getId(), that.getId()) &&
+		return Float.compare(that.getPrice(), getPrice()) == 0 &&
+				getId().equals(that.getId()) &&
 				getContact().equals(that.getContact()) &&
 				getVehicle().equals(that.getVehicle()) &&
 				getServiceList().equals(that.getServiceList()) &&
@@ -117,6 +128,6 @@ public class Appointment {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(getId(), getContact(), getVehicle(), getServiceList(), getAvailability1(), getAvailability2(), getNotes());
+		return Objects.hash(getId(), getContact(), getVehicle(), getServiceList(), getAvailability1(), getAvailability2(), getNotes(), getPrice());
 	}
 }

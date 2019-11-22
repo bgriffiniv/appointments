@@ -6,9 +6,12 @@ import com.bgriffiniv.challenges.nielsensports.appointments.data.IServiceReposit
 import com.bgriffiniv.challenges.nielsensports.appointments.data.IVehicleRepository;
 import com.bgriffiniv.challenges.nielsensports.appointments.model.Appointment;
 import javassist.NotFoundException;
+import org.apache.logging.log4j.util.Strings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -62,6 +65,28 @@ public class AppointmentService implements IAppointmentService {
 		return StreamSupport
 				.stream(appointmentRepository.findAll().spliterator(), false)
 				.collect(Collectors.toList());
+	}
+
+	@Override
+	public List<Appointment> listAppointments(String start, String end) throws IllegalStateException, IllegalArgumentException {
+		Date startDate = new Date();
+		startDate.setTime(Long.parseLong(start));
+		Date endDate = new Date();
+		endDate.setTime(Long.parseLong(end));
+		if (Strings.isBlank(start) || Strings.isBlank(end)) {
+			throw new IllegalArgumentException(String.format("Range start date and end date are required"));
+		}
+		if (startDate.after(endDate)) {
+			throw new IllegalStateException(String.format("Range start date must be before end date"));
+		}
+		List<Appointment> appointmentList = new ArrayList<>();
+		appointmentRepository.findAllByAvailability1Between(start, end).forEach(appointmentList::add);
+		appointmentRepository.findAllByAvailability2Between(start, end).forEach((appointment) -> {
+			if (!appointmentList.contains(appointment)) {
+				appointmentList.add(appointment);
+			}
+		});
+		return appointmentList;
 	}
 
 	@Override

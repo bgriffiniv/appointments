@@ -6,6 +6,7 @@ import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Comparator;
 import java.util.List;
 
 import static org.springframework.web.bind.annotation.RequestMethod.*;
@@ -24,23 +25,35 @@ public class AppointmentControllerV1 {
 
 	@RequestMapping(path = "/appointments", method = GET)
 	@ResponseBody
-	public List<Appointment> listSppointments() {
-		System.out.println("hey");
+	public List<Appointment> listAppointments() {
 		return appointmentService.listAppointments();
+	}
+
+	@RequestMapping(path = "/appointments", params = {"start", "end"}, method = GET)
+	@ResponseBody
+	public List<Appointment> listAppointmentInRangeSortedByPrice(@RequestParam String start, @RequestParam String end) {
+		List<Appointment> appointmentList = appointmentService.listAppointments(start, end);
+		appointmentList.sort(new Comparator<Appointment>() {
+			@Override
+			public int compare(Appointment o1, Appointment o2) {
+				return Float.compare(o1.getPrice(), o2.getPrice());
+			}
+		});
+
+		return appointmentList;
+
 	}
 
 	@RequestMapping(path = "/appointments/{id}", method = GET)
 	@ResponseBody
 	public Appointment findAppointment(@PathVariable int id) throws NotFoundException {
-		System.out.println("hey");
 		return appointmentService.findAppointment(id);
 	}
 
 	@RequestMapping(path = "/appointments", method = POST)
 	@ResponseBody
-	public void addAppointment(@RequestBody String foo) throws IllegalArgumentException {
-		System.out.println("hey");
-		return;// appointmentService.addAppointment((Appointment) appointment);
+	public int addAppointment(@RequestBody Appointment appointment) throws IllegalArgumentException {
+		return appointmentService.addAppointment(appointment);
 
 
 	}
@@ -48,7 +61,6 @@ public class AppointmentControllerV1 {
 	@RequestMapping(path = "/appointments/{id}", method = PUT)
 	@ResponseBody
 	public int editAppointment(@PathVariable int id, @RequestBody Appointment appointment) throws IllegalArgumentException, NotFoundException {
-		System.out.println("hey");
 		return appointmentService.editAppointment(id, appointment);
 
 	}
@@ -56,7 +68,6 @@ public class AppointmentControllerV1 {
 	@RequestMapping(path = "/appointments/{id}", method = DELETE)
 	@ResponseBody
 	public int deleteAppointment(@PathVariable int id) throws NotFoundException {
-		System.out.println("hey");
 		return appointmentService.removeAppointment(id);
 
 	}

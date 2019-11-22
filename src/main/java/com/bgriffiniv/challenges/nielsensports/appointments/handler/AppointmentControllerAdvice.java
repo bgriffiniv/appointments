@@ -9,7 +9,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 @ControllerAdvice
 public class AppointmentControllerAdvice extends ResponseEntityExceptionHandler {
-	@ExceptionHandler(IllegalArgumentException.class)
+	@ExceptionHandler({IllegalArgumentException.class, IllegalStateException.class})
 	protected ResponseEntity<String> handleTransactionException(IllegalArgumentException ex) {
 		String message = ex.getMessage();
 		return new ResponseEntity<>(message, HttpStatus.BAD_REQUEST);

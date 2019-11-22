@@ -12,12 +12,13 @@ import static org.springframework.http.HttpMethod.*;
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests()
+		http.cors().and().authorizeRequests()
 				.antMatchers(GET, "/").permitAll()
 				.antMatchers(POST, "/appointments/**").permitAll()
 				.antMatchers(GET, "/appointments/**").permitAll()
 				.antMatchers(PUT, "/appointments/**").permitAll()
 				.antMatchers(DELETE, "/appointments/**").permitAll()
-				.anyRequest().denyAll();
+				.anyRequest().denyAll()
+				.and().csrf().disable();
 	}
 }

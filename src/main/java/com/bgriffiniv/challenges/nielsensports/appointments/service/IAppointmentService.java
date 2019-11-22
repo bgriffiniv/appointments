@@ -12,6 +12,8 @@ public interface IAppointmentService {
 	public Appointment findAppointment(Integer appointmentId) throws NotFoundException;
 	public List<Appointment> listAppointments();
 
+	public List<Appointment> listAppointments(String start, String end) throws IllegalStateException;
+
 	public long countAppointments();
 
 	public int editAppointment(Integer appointmentId, Appointment appointment) throws NotFoundException, IllegalArgumentException;
