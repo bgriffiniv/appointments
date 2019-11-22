@@ -142,5 +142,5 @@ There are five main features missing from this implementation:
 - strong security, both around the app itself and the database console
 - CD/CI, automated tests, logging, monitoring, and other DevOps aspects
 - random insertion of appointments into the service, as indicated in the challenge instructions
-- calculation of appointment prices from service price sum
+- calculation of appointment price from sum of service list prices
 - validation of service type (tire change vs tire rotation) and contact-by (phone vs email) values
