@@ -77,8 +77,7 @@ Contact : {
 },
 Service : {
   type : String,
-  description : String,
-  appointmentList : Appointment[]
+  description : String
 },
 Vehicle : {
   year : String,
