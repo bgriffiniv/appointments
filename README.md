@@ -1,6 +1,6 @@
 # Coding Challenge: Car Service Center Application System REST API
 
-## Problem:
+## Problem
 
 > For this test please create a simple application with a REST API that can store and manage appointments for
 a car service center. Appointments should be persisted in a datastore. Please create the data model that you
@@ -29,9 +29,9 @@ interviewer.
 
 ### Structure
 There are four main components for the scheduler:
-- database and DTOs (H2)
-- service layer (Spring Boot w/ Data)
 - security layer (Spring Security)
+- service layer (Spring Boot w/ Data)
+- database and DTOs (H2)
 - container layer (Docker)
 
 ### Framework & Tools
@@ -60,7 +60,8 @@ Appointment : {
   vehicle : Vehicle,
   availability1 : String,
   availability2 : String,
-  notes : String
+  notes : String,
+  price: Float
 },
 Contact : {
   firstName : String,
@@ -76,8 +77,7 @@ Contact : {
 },
 Service : {
   type : String,
-  description : String,
-  appointmentList : Appointment[]
+  description : String
 },
 Vehicle : {
   year : String,
@@ -137,7 +137,9 @@ Send requests to `localhost:8000/`
 
 ## Caveats
 
-There are three main features missing from this implementation:
-1. Strong security, both around the app itself and the database console.
-2. CD/CI, automated tests, logging, monitoring, and other DevOps aspects.
-3. The insertion of appointments into the service at random intervals, as indicated in the challenge instructions.
+There are five main features missing from this implementation:
+- strong security, both around the app itself and the database console
+- CD/CI, automated tests, logging, monitoring, and other DevOps aspects
+- random insertion of appointments into the service, as indicated in the challenge instructions
+- calculation of appointment price from sum of service list prices
+- validation of service type (tire change vs tire rotation) and contact-by (phone vs email) values
