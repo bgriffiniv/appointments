@@ -1,28 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7d0644b4-4f54-4dd0-854f-15142b3e6622" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/AppointmentsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/appointments/AppointmentsApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/config/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/appointments/config/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/controller/AppointmentControllerV1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/appointments/controller/AppointmentControllerV1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/data/IAppointmentRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/appointments/data/IAppointmentRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/data/IContactRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/appointments/data/IContactRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/data/IServiceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/appointments/data/IServiceRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/data/IVehicleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/appointments/data/IVehicleRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/handler/AppointmentControllerAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/appointments/handler/AppointmentControllerAdvice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/appointments/model/Appointment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/Contact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/appointments/model/Contact.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/appointments/model/Service.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/model/Vehicle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/appointments/model/Vehicle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/service/AppointmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/appointments/service/AppointmentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/nielsensports/appointments/service/IAppointmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/bgriffiniv/challenges/appointments/service/IAppointmentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/bgriffiniv/challenges/nielsensports/appointments/AppointmentsApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/bgriffiniv/challenges/appointments/AppointmentsApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/bgriffiniv/challenges/nielsensports/appointments/service/AppointmentServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/bgriffiniv/challenges/appointments/service/AppointmentServiceTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="7d0644b4-4f54-4dd0-854f-15142b3e6622" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -356,7 +335,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574435813822</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="- remove references to company">
+      <created>1574436346560</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1574436346560</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -397,7 +383,8 @@
     <MESSAGE value="- fix db/repo issues&#10;- get tests to pass" />
     <MESSAGE value="- work on HTTP request handling" />
     <MESSAGE value="- add dockerfile" />
-    <option name="LAST_COMMIT_MESSAGE" value="- add dockerfile" />
+    <MESSAGE value="- remove references to company" />
+    <option name="LAST_COMMIT_MESSAGE" value="- remove references to company" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
