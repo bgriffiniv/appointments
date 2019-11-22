@@ -29,23 +29,24 @@ interviewer.
 
 ### Structure
 There are four main components for the scheduler:
-- database and DTOs
-- service layer
-- REST API
-- security layer
+- database and DTOs (H2)
+- service layer (Spring Boot w/ Data)
+- security layer (Spring Security)
+- container layer (Docker)
 
 ### Framework & Tools
 Spring Boot provides us with in-memory database options for building a prototype as well as 
-a REST framework including annotations. The only thing left to build is the actual database 
+a REST framework and simple security options by default. The only thing left to build is the actual database 
 and the business logic/objects.
 
 ### API
 The REST API should support the following functions:
-- POST /appointments { ... } (create)
-- GET /appointments/1 (read)
-- PUT /appointments/1 { ... } (update)
-- DELETE /appointments/1 (delete)
-- GET /appointments (list)
+- POST /appointments { ... } (create) => 1
+- GET /appointments/1 (read) => { ... }
+- PUT /appointments/1 { ... } (update) => 1
+- DELETE /appointments/1 (delete) => 1
+- GET /appointments (list) => [ ... ]
+- GET /appointments?start=123&end=456 (list) => [ ... ]
 
 ### JSON Schema
 
@@ -97,6 +98,6 @@ facilitate the Many-to-Many relationship between `Appointment` and `Service` tab
 **Build:** Gradle\
 **Datastore:** H2\
 **Test:** JUnit\
-~~**Container:** Docker~~\
+**Container:** Docker\
 ~~**CD/CI:** Jenkins~~
 
