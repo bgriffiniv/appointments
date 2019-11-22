@@ -60,7 +60,8 @@ Appointment : {
   vehicle : Vehicle,
   availability1 : String,
   availability2 : String,
-  notes : String
+  notes : String,
+  price: Float
 },
 Contact : {
   firstName : String,
@@ -137,7 +138,9 @@ Send requests to `localhost:8000/`
 
 ## Caveats
 
-There are three main features missing from this implementation:
+There are five main features missing from this implementation:
 - strong security, both around the app itself and the database console
 - CD/CI, automated tests, logging, monitoring, and other DevOps aspects
 - random insertion of appointments into the service, as indicated in the challenge instructions
+- calculation of appointment prices from service price sum
+- validation of service type (tire change vs tire rotation) and contact-by (phone vs email) values
