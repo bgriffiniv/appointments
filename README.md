@@ -92,6 +92,40 @@ Vehicle : {
 There is a join table `Appointment_Service` with `appointment_id` and `service_id` columns to 
 facilitate the Many-to-Many relationship between `Appointment` and `Service` tables.
 
+## Usage
+
+### Git
+
+Checkout this application:
+
+`git clone https://github.com/bgriffiniv/appointments.git`
+
+### Gradle
+
+Build this application:
+
+`./gradlew build` or `./gradlew jar`
+
+Run this application:
+
+`./gradlew bootRun`
+
+Send requests to `localhost:8080/`
+
+### Docker
+
+Change the base image with the `FROM` command in the `dockerfile` (currently Slim Linux with JRE 10).
+
+Create an image:
+
+`docker build -t appointments .`
+
+Run in a container:
+
+`docker run -p 8000:8080 appointments`
+
+Send requests to `localhost:8000/`
+
 ## Considerations
 
 **Language:** Java\
@@ -101,3 +135,9 @@ facilitate the Many-to-Many relationship between `Appointment` and `Service` tab
 **Container:** Docker\
 ~~**CD/CI:** Jenkins~~
 
+## Caveats
+
+There are three main features missing from this implementation:
+1. Strong security, both around the app itself and the database console.
+2. CD/CI, automated tests, logging, monitoring, and other DevOps aspects.
+3. The insertion of appointments into the service at random intervals, as indicated in the challenge instructions.
