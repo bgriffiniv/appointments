@@ -1,6 +1,6 @@
 # Coding Challenge: Car Service Center Application System REST API
 
-## Problem:
+## Problem
 
 > For this test please create a simple application with a REST API that can store and manage appointments for
 a car service center. Appointments should be persisted in a datastore. Please create the data model that you
